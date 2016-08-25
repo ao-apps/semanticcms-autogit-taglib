@@ -32,8 +32,8 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 			Gets all possible states.
 		]]></description>
 		<name>getStates</name>
-		<function-class>com.aoindustries.docs.git.GitStatus.State</function-class>
-		<function-signature>com.aoindustries.docs.git.GitStatus.State[] values()</function-signature>
+		<function-class>com.semanticcms.autogit.model.GitStatus.State</function-class>
+		<function-signature>com.semanticcms.autogit.model.GitStatus.State[] values()</function-signature>
 		<example>${autogit:getStates()}</example>
 	</function>
 	<function>
@@ -41,8 +41,8 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 			Gets all possible changes.
 		]]></description>
 		<name>getChanges</name>
-		<function-class>com.aoindustries.docs.git.GitStatus.Change</function-class>
-		<function-signature>com.aoindustries.docs.git.GitStatus.Change[] values()</function-signature>
+		<function-class>com.semanticcms.autogit.model.GitStatus.Change</function-class>
+		<function-signature>com.semanticcms.autogit.model.GitStatus.Change[] values()</function-signature>
 		<example>${autogit:getChanges()}</example>
 	</function>
 	<function>
@@ -50,8 +50,8 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 			Gets all possible meanings.
 		]]></description>
 		<name>getMeanings</name>
-		<function-class>com.aoindustries.docs.git.GitStatus.Meaning</function-class>
-		<function-signature>com.aoindustries.docs.git.GitStatus.Meaning[] values()</function-signature>
+		<function-class>com.semanticcms.autogit.model.GitStatus.Meaning</function-class>
+		<function-signature>com.semanticcms.autogit.model.GitStatus.Meaning[] values()</function-signature>
 		<example>${autogit:getMeanings()}</example>
 	</function>
 	<function>
