@@ -69,6 +69,11 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 			<version>1.3</version>
 		</dependency>
 		<dependency>
+			<groupId>com.aoindustries</groupId>
+			<artifactId>ao-taglib</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
 			<groupId>com.semanticcms</groupId>
 			<artifactId>semanticcms-autogit-model</artifactId>
 			<version>1.0-SNAPSHOT</version>
