@@ -52,7 +52,7 @@ Request parameters:
 		</c:forEach>
 	</meanings>
 	<c:set var="gitStatus" value="${autogit:getGitStatus()}" />
-	<gitStatus statusTime="${fn:escapeXml(gitStatus.statusTime.toEpochMilli())}" state="${fn:escapeXml(gitStatus.state.name())}">
+	<gitStatus statusTime="${fn:escapeXml(gitStatus.statusTime)}" state="${fn:escapeXml(gitStatus.state.name())}">
 		<uncommittedChanges>
 			<c:forEach var="uncommittedChange" items="${gitStatus.uncommittedChanges}">
 				<uncommittedChange x="${fn:escapeXml(uncommittedChange.x)}" y="${fn:escapeXml(uncommittedChange.y)}" meaning="${fn:escapeXml(uncommittedChange.meaning.name())}" module="${fn:escapeXml(uncommittedChange.module)}" from="${fn:escapeXml(uncommittedChange.from)}" to="${fn:escapeXml(uncommittedChange.to)}" />
