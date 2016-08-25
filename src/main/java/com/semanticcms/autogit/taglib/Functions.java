@@ -24,6 +24,8 @@ package com.semanticcms.autogit.taglib;
 
 import static com.aoindustries.servlet.filter.FunctionContext.getServletContext;
 import com.semanticcms.autogit.model.GitStatus;
+import com.semanticcms.autogit.model.State;
+import com.semanticcms.autogit.model.UncommittedChange;
 import com.semanticcms.autogit.servlet.AutoGitContextListener;
 import java.util.Collections;
 import java.util.List;
@@ -34,8 +36,8 @@ final public class Functions {
 		AutoGitContextListener gitContext = AutoGitContextListener.getInstance(getServletContext());
 		if(gitContext == null) {
 			// Java 1.8: Inline this
-			List<GitStatus.UncommittedChange> emptyList = Collections.emptyList();
-			return new GitStatus(System.currentTimeMillis(), GitStatus.State.DISABLED, emptyList);
+			List<UncommittedChange> emptyList = Collections.emptyList();
+			return new GitStatus(System.currentTimeMillis(), State.DISABLED, emptyList);
 		}
 		return gitContext.getGitStatus();
 	}
