@@ -31,6 +31,7 @@ Request parameters:
 <result
 	xmlns:autogit="https://semanticcms.com/semanticcms-autogit-taglib"
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:jsp="http://java.sun.com/JSP/Page"
 >
 	<jsp:directive.page language="java" buffer="512kb" autoFlush="true" pageEncoding="UTF-8" session="false" />
