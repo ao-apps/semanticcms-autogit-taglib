@@ -35,7 +35,7 @@ Request parameters:
 	xmlns:jsp="http://java.sun.com/JSP/Page"
 >
 	<jsp:directive.page language="java" buffer="512kb" autoFlush="true" pageEncoding="UTF-8" session="false" />
-	<!-- TODO: <jsp:directive.page contentType="application/xml" /> -->
+	<jsp:directive.page contentType="application/xml" />
 
 	<states>
 		<c:forEach var="state" items="${autogit:getStates()}">
