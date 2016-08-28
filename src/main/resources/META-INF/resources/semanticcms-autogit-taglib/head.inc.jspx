@@ -27,13 +27,10 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 	xmlns:ao="http://aoindustries.com/ao-taglib"
 >
 	<jsp:directive.page language="java" buffer="512kb" autoFlush="true" pageEncoding="UTF-8" session="false" />
-	<c:if test="${!requestScope['/semanticcms-autogit-taglib/head.inc.jspx/included']}">
-		<c:set scope="request" var="/semanticcms-autogit-taglib/head.inc.jspx/included" value="true" />
-		<c:if test="${!header['X-com-aoindustries-web-page-exporting']}">
-			<ao:script src="/semanticcms-autogit-taglib/scripts.js" />
-			<ao:script>
-				semanticcms_autogit_taglib.getGitStatusUrl = <ao:out value="${ao:encodeURL(pageContext.request.contextPath.concat('/semanticcms-autogit-taglib/ajax/get-git-status.jspx'))}" />;
-			</ao:script>
-		</c:if>
+	<c:if test="${!header['X-com-aoindustries-web-page-exporting']}">
+		<ao:script src="/semanticcms-autogit-taglib/scripts.js" />
+		<ao:script>
+			semanticcms_autogit_taglib.getGitStatusUrl = <ao:out value="${ao:encodeURL(pageContext.request.contextPath.concat('/semanticcms-autogit-taglib/ajax/get-git-status.jspx'))}" />;
+		</ao:script>
 	</c:if>
 </jsp:root>
