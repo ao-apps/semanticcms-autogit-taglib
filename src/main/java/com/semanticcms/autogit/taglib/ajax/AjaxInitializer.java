@@ -27,14 +27,16 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-@WebListener("Registers the \"" + AjaxInitializer.HEAD_INCLUDE + "\" head include in SemanticCMS.")
+@WebListener("Registers the scripts and \"" + AjaxInitializer.HEAD_INCLUDE + "\" head include in SemanticCMS.")
 public class AjaxInitializer implements ServletContextListener {
 
 	static final String HEAD_INCLUDE = "/semanticcms-autogit-taglib/head.inc.jspx";
 
 	@Override
 	public void contextInitialized(ServletContextEvent event) {
-		SemanticCMS.getInstance(event.getServletContext()).addHeadInclude(HEAD_INCLUDE);
+		SemanticCMS semanticCMS = SemanticCMS.getInstance(event.getServletContext());
+		semanticCMS.addScript("jquery", "/webjars/jquery/2.2.4/jquery.min.js");
+		semanticCMS.addHeadInclude(HEAD_INCLUDE);
 	}
 
 	@Override
