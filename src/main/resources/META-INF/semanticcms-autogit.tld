@@ -56,7 +56,9 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 	</function>
 	<function>
 		<description><![CDATA[
-			Gets the current Git status.
+			Gets the current Git status.  Results are cached per request so
+			multiple calls within a single request will always get the Git
+			status at the same moment in time.
 		]]></description>
 		<name>getGitStatus</name>
 		<function-class>com.semanticcms.autogit.taglib.Functions</function-class>
