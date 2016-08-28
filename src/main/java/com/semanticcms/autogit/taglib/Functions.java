@@ -25,33 +25,15 @@ package com.semanticcms.autogit.taglib;
 import static com.aoindustries.servlet.filter.FunctionContext.getRequest;
 import static com.aoindustries.servlet.filter.FunctionContext.getServletContext;
 import com.semanticcms.autogit.model.GitStatus;
-import com.semanticcms.autogit.model.State;
-import com.semanticcms.autogit.model.UncommittedChange;
 import com.semanticcms.autogit.servlet.AutoGitContextListener;
-import java.util.Collections;
-import java.util.List;
-import javax.servlet.http.HttpServletRequest;
 
 final public class Functions {
 
-	private static final String GIT_STATUS_CACHE_KEY = Functions.class.getName() + ".getGitStatus.cache";
-
 	public static GitStatus getGitStatus() {
-		HttpServletRequest request = getRequest();
-		// Look for cached value
-		GitStatus gitStatus = (GitStatus)request.getAttribute(GIT_STATUS_CACHE_KEY);
-		if(gitStatus == null) {
-			AutoGitContextListener gitContext = AutoGitContextListener.getInstance(getServletContext());
-			if(gitContext == null) {
-				// Java 1.8: Inline this
-				List<UncommittedChange> emptyList = Collections.emptyList();
-				gitStatus = new GitStatus(System.currentTimeMillis(), State.DISABLED, emptyList);
-			} else {
-				gitStatus = gitContext.getGitStatus();
-			}
-			request.setAttribute(GIT_STATUS_CACHE_KEY, gitStatus);
-		}
-		return gitStatus;
+		return AutoGitContextListener.getGitStatus(
+			getServletContext(),
+			getRequest()
+		);
 	}
 
 	/**
