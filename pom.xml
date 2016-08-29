@@ -27,7 +27,7 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 	<parent>
 		<groupId>com.semanticcms</groupId>
 		<artifactId>semanticcms-autogit</artifactId>
-		<version>1.0-SNAPSHOT</version>
+		<version>1.0</version>
 	</parent>
 
 	<groupId>com.semanticcms</groupId>
