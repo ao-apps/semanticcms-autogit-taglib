@@ -26,7 +26,7 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 	<display-name>semanticcms-autogit-taglib</display-name>
 	<tlib-version>1.0</tlib-version>
 	<short-name>autogit</short-name>
-	<uri>https://semanticcms.com/semanticcms-autogit-taglib</uri>
+	<uri>https://semanticcms.com/autogit/taglib/</uri>
 	<function>
 		<description><![CDATA[
 			Gets all possible states.
