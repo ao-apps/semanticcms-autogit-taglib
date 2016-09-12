@@ -29,7 +29,7 @@ Request parameters:
 	None
 -->
 <result
-	xmlns:autogit="https://semanticcms.com/semanticcms-autogit-taglib"
+	xmlns:autogit="https://semanticcms.com/autogit/taglib/"
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:jsp="http://java.sun.com/JSP/Page"
