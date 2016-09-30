@@ -27,7 +27,7 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 	xmlns:jsp="http://java.sun.com/JSP/Page"
 	version="2.1"
 >
-	<jsp:directive.page language="java" buffer="512kb" autoFlush="true" pageEncoding="UTF-8" session="false" />
+	<jsp:directive.page language="java" pageEncoding="UTF-8" session="false" />
 	<c:if test="${!core:isExporting()}">
 		<ao:script src="/semanticcms-autogit-taglib/scripts.js" />
 		<ao:script>
