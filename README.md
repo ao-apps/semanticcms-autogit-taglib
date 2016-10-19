@@ -1,5 +1,5 @@
 # [<img src="ao-logo.png" alt="AO Logo" width="35" height="40">](https://www.aoindustries.com/) [SemanticCMS](https://semanticcms.com/) / [AutoGit](https://semanticcms.com/autogit/) / [Taglib](https://semanticcms.com/autogit/taglib/)
-[SemanticCMS](https://semanticcms.com/) automatic Git in a JSP environment.
+[SemanticCMS automatic Git](https://semanticcms.com/autogit/) in a JSP environment.
 
 ## Project Links
 * [Project Home](https://semanticcms.com/autogit/taglib/)
