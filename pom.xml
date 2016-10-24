@@ -38,9 +38,6 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 	<properties>
 		<bookPath>/autogit/taglib</bookPath>
 		<shortTitle>Taglib</shortTitle>
-		<javadoc.breadcrumbs><![CDATA[<a target="_top" href="${project.parent.parent.url}">${project.parent.parent.name}</a>
-/ <a target="_top" href="${project.parent.url}">AutoGit</a>
-/ <a target="_top" href="${project.url}">${shortTitle}</a>]]></javadoc.breadcrumbs>
 		<description.html><![CDATA[<a target="_top" href="https://semanticcms.com/autogit/">SemanticCMS automatic Git</a> in a JSP environment.]]></description.html>
 	</properties>
 
