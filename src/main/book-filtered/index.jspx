@@ -36,7 +36,7 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 	>
 		<core:child page="apidocs/index.jspx" />
 		<p>
-			<core:link page="/index.jspx">SemanticCMS automatic Git</core:link> in a JSP environment.
+			<core:link book="/autogit" page="/index.jspx">SemanticCMS automatic Git</core:link> in a JSP environment.
 		</p>
 		<section:section label="Project Links">
 			<ul>
