@@ -27,7 +27,10 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 	version="2.1">
 	<description>SemanticCMS automatic Git in a JSP environment.</description>
 	<display-name>semanticcms-autogit-taglib</display-name>
-	<tlib-version>1.0</tlib-version>
+	<tlib-version>
+		<!-- Release: @{project.version} -->
+		@{parsedVersion.majorVersion}.@{parsedVersion.minorVersion}.@{parsedVersion.incrementalVersion}
+	</tlib-version>
 	<short-name>autogit</short-name>
 	<uri>https://semanticcms.com/autogit/taglib/</uri>
 	<function>
