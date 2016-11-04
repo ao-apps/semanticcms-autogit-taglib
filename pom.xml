@@ -66,8 +66,8 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 							<configuration>
 								<links>
 									<link>https://docs.oracle.com/javaee/6/api/</link>
-									<link>https://www.aoindustries.com/ao-servlet-filter/apidocs/</link>
-									<link>https://www.aoindustries.com/ao-taglib/apidocs/</link>
+									<link>https://aoindustries.com/ao-servlet-filter/apidocs/</link>
+									<link>https://aoindustries.com/ao-taglib/apidocs/</link>
 									<link>https://semanticcms.com/autogit/model/apidocs/</link>
 									<link>https://semanticcms.com/autogit/servlet/apidocs/</link>
 									<link>https://semanticcms.com/core/servlet/apidocs/</link>
