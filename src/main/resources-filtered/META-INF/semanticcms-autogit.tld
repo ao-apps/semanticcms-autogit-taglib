@@ -25,7 +25,9 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
 	version="2.1">
-	<description>@{project.description}</description>
+	<description><![CDATA[
+		<p>@{project.description}</p>
+	]]></description>
 	<display-name>@{project.name}</display-name>
 	<tlib-version>
 		<!-- Release: @{project.version} -->
@@ -35,7 +37,7 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 	<uri>@{project.url}</uri>
 	<function>
 		<description><![CDATA[
-			Gets all possible states.
+			<p>Gets all possible states.</p>
 		]]></description>
 		<name>getStates</name>
 		<function-class>com.semanticcms.autogit.model.State</function-class>
@@ -44,7 +46,7 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 	</function>
 	<function>
 		<description><![CDATA[
-			Gets all possible changes.
+			<p>Gets all possible changes.</p>
 		]]></description>
 		<name>getChanges</name>
 		<function-class>com.semanticcms.autogit.model.Change</function-class>
@@ -53,7 +55,7 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 	</function>
 	<function>
 		<description><![CDATA[
-			Gets all possible meanings.
+			<p>Gets all possible meanings.</p>
 		]]></description>
 		<name>getMeanings</name>
 		<function-class>com.semanticcms.autogit.model.Meaning</function-class>
@@ -62,9 +64,11 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 	</function>
 	<function>
 		<description><![CDATA[
-			Gets the current Git status.  Results are cached per request so
-			multiple calls within a single request will always get the Git
-			status at the same moment in time.
+			<p>
+				Gets the current Git status.  Results are cached per request so
+				multiple calls within a single request will always get the Git
+				status at the same moment in time.
+			</p>
 		]]></description>
 		<name>getGitStatus</name>
 		<function-class>com.semanticcms.autogit.taglib.Functions</function-class>
