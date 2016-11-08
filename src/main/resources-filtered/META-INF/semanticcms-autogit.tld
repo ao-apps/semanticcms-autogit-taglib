@@ -42,7 +42,7 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 		<name>getStates</name>
 		<function-class>com.semanticcms.autogit.model.State</function-class>
 		<function-signature>com.semanticcms.autogit.model.State[] values()</function-signature>
-		<example><![CDATA[<pre>${autogit:getStates()}</pre>]]></example>
+		<example><![CDATA[<code>${autogit:getStates()}</code>]]></example>
 	</function>
 	<function>
 		<description><![CDATA[
@@ -51,7 +51,7 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 		<name>getChanges</name>
 		<function-class>com.semanticcms.autogit.model.Change</function-class>
 		<function-signature>com.semanticcms.autogit.model.Change[] values()</function-signature>
-		<example><![CDATA[<pre>${autogit:getChanges()}</pre>]]></example>
+		<example><![CDATA[<code>${autogit:getChanges()}</code>]]></example>
 	</function>
 	<function>
 		<description><![CDATA[
@@ -60,7 +60,7 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 		<name>getMeanings</name>
 		<function-class>com.semanticcms.autogit.model.Meaning</function-class>
 		<function-signature>com.semanticcms.autogit.model.Meaning[] values()</function-signature>
-		<example><![CDATA[<pre>${autogit:getMeanings()}</pre>]]></example>
+		<example><![CDATA[<code>${autogit:getMeanings()}</code>]]></example>
 	</function>
 	<function>
 		<description><![CDATA[
@@ -73,6 +73,6 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 		<name>getGitStatus</name>
 		<function-class>com.semanticcms.autogit.taglib.Functions</function-class>
 		<function-signature>com.semanticcms.autogit.model.GitStatus getGitStatus()</function-signature>
-		<example><![CDATA[<pre>${autogit:getGitStatus()}</pre>]]></example>
+		<example><![CDATA[<code>${autogit:getGitStatus()}</code>]]></example>
 	</function>
 </taglib>
