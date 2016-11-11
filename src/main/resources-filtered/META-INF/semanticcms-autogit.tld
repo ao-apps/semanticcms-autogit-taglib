@@ -26,7 +26,7 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
 	version="2.1">
 	<description><![CDATA[
-		<p>@{project.description}</p>
+		<p>@{description.html}</p>
 	]]></description>
 	<display-name>@{project.name}</display-name>
 	<tlib-version>
@@ -37,7 +37,9 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 	<uri>@{project.url}</uri>
 	<function>
 		<description><![CDATA[
-			<p>Gets all possible states.</p>
+			<p>
+				Gets all possible states.
+			</p>
 		]]></description>
 		<name>getStates</name>
 		<function-class>com.semanticcms.autogit.model.State</function-class>
@@ -46,7 +48,9 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 	</function>
 	<function>
 		<description><![CDATA[
-			<p>Gets all possible changes.</p>
+			<p>
+				Gets all possible changes.
+			</p>
 		]]></description>
 		<name>getChanges</name>
 		<function-class>com.semanticcms.autogit.model.Change</function-class>
@@ -55,7 +59,9 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 	</function>
 	<function>
 		<description><![CDATA[
-			<p>Gets all possible meanings.</p>
+			<p>
+				Gets all possible meanings.
+			</p>
 		]]></description>
 		<name>getMeanings</name>
 		<function-class>com.semanticcms.autogit.model.Meaning</function-class>
