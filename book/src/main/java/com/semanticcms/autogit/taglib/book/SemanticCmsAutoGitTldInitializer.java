@@ -38,6 +38,7 @@ public class SemanticCmsAutoGitTldInitializer extends TagReferenceInitializer {
 	private static final Map<String,String> additionalApiLinks = new LinkedHashMap<String,String>();
 	static {
 		additionalApiLinks.put("com.semanticcms.autogit.model.", "https://semanticcms.com/autogit/model/apidocs/");
+		additionalApiLinks.put("com.semanticcms.autogit.taglib.", "https://semanticcms.com/autogit/taglib/apidocs/");
 	}
 
 	public SemanticCmsAutoGitTldInitializer() {
