@@ -31,10 +31,6 @@ import java.util.Map;
  */
 public class SemanticCmsAutoGitTldInitializer extends TagReferenceInitializer {
 
-	private static final String TLD_BOOK = "/autogit/taglib";
-	private static final String TLD_PATH = "/semanticcms-autogit.tld";
-	static final String TLD_SERVLET_PATH = TLD_BOOK + TLD_PATH;
-
 	private static final Map<String,String> additionalApiLinks = new LinkedHashMap<String,String>();
 	static {
 		additionalApiLinks.put("com.semanticcms.autogit.model.", "https://semanticcms.com/autogit/model/apidocs/");
@@ -45,8 +41,8 @@ public class SemanticCmsAutoGitTldInitializer extends TagReferenceInitializer {
 		super(
 			"AutoGit Taglib Reference",
 			"Taglib Reference",
-			TLD_BOOK,
-			TLD_PATH,
+			"/autogit/taglib",
+			"/semanticcms-autogit.tld",
 			"https://docs.oracle.com/javase/6/docs/api/",
 			"https://docs.oracle.com/javaee/6/api/",
 			additionalApiLinks
