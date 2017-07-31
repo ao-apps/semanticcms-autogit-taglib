@@ -43,6 +43,7 @@ public class SemanticCmsAutoGitTldInitializer extends TagReferenceInitializer {
 		super(
 			"AutoGit Taglib Reference",
 			"Taglib Reference",
+			"semanticcms.com",
 			"/autogit/taglib",
 			"/semanticcms-autogit.tld",
 			Maven.properties.getProperty("javac.link.javaApi.jdk16"),
