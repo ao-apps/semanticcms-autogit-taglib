@@ -22,6 +22,10 @@
  */
 package com.semanticcms.autogit.taglib.book;
 
+import com.aoindustries.net.Path;
+import com.aoindustries.validation.ValidationException;
+import com.semanticcms.core.model.BookRef;
+import com.semanticcms.core.model.ResourceRef;
 import com.semanticcms.tagreference.TagReferenceInitializer;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -39,13 +43,17 @@ public class SemanticCmsAutoGitTldInitializer extends TagReferenceInitializer {
 		additionalApiLinks.put("com.semanticcms.autogit.model.", "https://semanticcms.com/autogit/model/apidocs/");
 	}
 
-	public SemanticCmsAutoGitTldInitializer() {
+	public SemanticCmsAutoGitTldInitializer() throws ValidationException {
 		super(
 			"AutoGit Taglib Reference",
 			"Taglib Reference",
-			"semanticcms.com",
-			"/autogit/taglib",
-			"/semanticcms-autogit.tld",
+			new ResourceRef(
+				new BookRef(
+					"semanticcms.com",
+					Path.valueOf("/autogit/taglib")
+				),
+				Path.valueOf("/semanticcms-autogit.tld")
+			),
 			Maven.properties.getProperty("javac.link.javaApi.jdk16"),
 			Maven.properties.getProperty("javac.link.javaeeApi.6"),
 			additionalApiLinks
