@@ -22,6 +22,7 @@
  */
 package com.semanticcms.autogit.taglib.book;
 
+import com.aoindustries.net.DomainName;
 import com.aoindustries.net.Path;
 import com.aoindustries.validation.ValidationException;
 import com.semanticcms.core.model.BookRef;
@@ -49,7 +50,7 @@ public class SemanticCmsAutoGitTldInitializer extends TagReferenceInitializer {
 			"Taglib Reference",
 			new ResourceRef(
 				new BookRef(
-					"semanticcms.com",
+					DomainName.valueOf("semanticcms.com"),
 					Path.valueOf("/autogit/taglib")
 				),
 				Path.valueOf("/semanticcms-autogit.tld")
