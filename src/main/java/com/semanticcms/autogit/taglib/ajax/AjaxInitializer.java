@@ -1,6 +1,6 @@
 /*
  * semanticcms-autogit-taglib - SemanticCMS automatic Git in a JSP environment.
- * Copyright (C) 2016  AO Industries, Inc.
+ * Copyright (C) 2016, 2017  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,21 +22,21 @@
  */
 package com.semanticcms.autogit.taglib.ajax;
 
-import com.semanticcms.core.servlet.SemanticCMS;
+import com.semanticcms.core.renderer.html.HtmlRenderer;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-@WebListener("Registers the scripts and \"" + AjaxInitializer.HEAD_INCLUDE + "\" head include in SemanticCMS.")
+@WebListener("Registers the scripts and \"" + AjaxInitializer.HEAD_INCLUDE + "\" head include in HtmlRenderer.")
 public class AjaxInitializer implements ServletContextListener {
 
 	static final String HEAD_INCLUDE = "/semanticcms-autogit-taglib/head.inc.jspx";
 
 	@Override
 	public void contextInitialized(ServletContextEvent event) {
-		SemanticCMS semanticCMS = SemanticCMS.getInstance(event.getServletContext());
-		semanticCMS.addScript("jquery", "/webjars/jquery/2.2.4/jquery.min.js");
-		semanticCMS.addHeadInclude(HEAD_INCLUDE);
+		HtmlRenderer htmlRenderer = HtmlRenderer.getInstance(event.getServletContext());
+		htmlRenderer.addScript("jquery", "/webjars/jquery/2.2.4/jquery.min.js");
+		htmlRenderer.addHeadInclude(HEAD_INCLUDE);
 	}
 
 	@Override
