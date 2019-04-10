@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 semanticcms-autogit-taglib - SemanticCMS automatic Git in a JSP environment.
-Copyright (C) 2016, 2017, 2018  AO Industries, Inc.
+Copyright (C) 2016, 2017, 2018, 2019  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -37,7 +37,7 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 		<documented.groupId>com.semanticcms</documented.groupId><documented.artifactId>semanticcms-autogit-taglib</documented.artifactId>
 		<documented.javaVersion>1.6</documented.javaVersion>
 		<documented.javac.link.javaApi>${javac.link.javaApi.jdk16}</documented.javac.link.javaApi>
-		<documented.name>SemanticCMS AutoGit Taglib</documented.name>
+		<documented.name>SemanticCMS 2 AutoGit Taglib</documented.name>
 		<documented.shortTitle>Taglib</documented.shortTitle>
 		<documented.url>https://semanticcms.com/autogit/taglib/</documented.url>
 		<documented.description>SemanticCMS automatic Git in a JSP environment.</documented.description>
