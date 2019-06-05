@@ -41,7 +41,7 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 		<javadoc.taglibReference><![CDATA[<li><a target="_top" href="${project.url}semanticcms-autogit.tld/">Taglib Reference</a></li>]]></javadoc.taglibReference>
 	</properties>
 
-	<name>SemanticCMS 2 AutoGit Taglib</name>
+	<name>SemanticCMS AutoGit Taglib²</name>
 	<url>https://semanticcms.com/autogit/taglib/</url>
 	<description>SemanticCMS automatic Git in a JSP environment.</description>
 	<inceptionYear>2016</inceptionYear>
@@ -64,10 +64,13 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 						<configuration>
 							<links>
 								<link>${javac.link.javaApi}</link>
+								<!-- Java EE -->
 								<link>${javac.link.javaeeApi.6}</link>
-								<link>https://aoindustries.com/ao-servlet-firewall/webjars/apidocs/</link>
+								<!-- Direct -->
 								<link>https://aoindustries.com/ao-servlet-filter/apidocs/</link>
+								<link>https://aoindustries.com/ao-servlet-firewall/webjars/apidocs/</link>
 								<link>https://aoindustries.com/ao-taglib/apidocs/</link>
+								<!-- No apidocs: <groupId>org.webjars</groupId><artifactId>jquery</artifactId> -->
 								<link>https://semanticcms.com/autogit/model/apidocs/</link>
 								<link>https://semanticcms.com/autogit/servlet/apidocs/</link>
 								<link>https://semanticcms.com/core/renderer/html/apidocs/</link>
@@ -80,57 +83,140 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 		</profile>
 	</profiles>
 
+	<dependencyManagement>
+		<dependencies>
+			<!-- Java EE -->
+			<dependency>
+				<groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId><version>3.0.1</version>
+				<scope>provided</scope>
+			</dependency>
+			<!-- JSTL: See http://stackoverflow.com/questions/6094329/tomcat-7-and-jstl -->
+			<dependency>
+				<groupId>javax.servlet</groupId><artifactId>jstl</artifactId><version>1.2</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet.jsp</groupId><artifactId>javax.servlet.jsp-api</artifactId><version>2.2.1</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.glassfish.web</groupId><artifactId>jstl-impl</artifactId><version>1.2</version>
+				<exclusions>
+					<exclusion>
+						<groupId>javax.servlet</groupId><artifactId>servlet-api</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>javax.servlet.jsp</groupId><artifactId>jsp-api</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>javax.servlet.jsp.jstl</groupId><artifactId>jstl-api</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<!-- Direct -->
+			<dependency>
+				<groupId>com.aoindustries</groupId><artifactId>ao-servlet-filter</artifactId><version>1.6.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.aoindustries</groupId><artifactId>ao-servlet-filter</artifactId><version>1.6.1-SNAPSHOT</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.aoindustries</groupId><artifactId>ao-servlet-firewall-webjars</artifactId><version>1.0.0-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.aoindustries</groupId><artifactId>ao-servlet-firewall-webjars</artifactId><version>1.0.0-SNAPSHOT</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.aoindustries</groupId><artifactId>ao-taglib</artifactId><version>3.0.1-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.aoindustries</groupId><artifactId>ao-taglib</artifactId><version>3.0.1-SNAPSHOT</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<!-- TODO: Update -->
+				<groupId>org.webjars</groupId><artifactId>jquery</artifactId><version>2.2.4</version>
+			</dependency>
+			<dependency>
+				<groupId>com.semanticcms</groupId><artifactId>semanticcms-autogit-model</artifactId><version>2.0.0-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.semanticcms</groupId><artifactId>semanticcms-autogit-model</artifactId><version>2.0.0-SNAPSHOT</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.semanticcms</groupId><artifactId>semanticcms-autogit-servlet</artifactId><version>2.0.0-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.semanticcms</groupId><artifactId>semanticcms-autogit-servlet</artifactId><version>2.0.0-SNAPSHOT</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-renderer-html</artifactId><version>2.0.0-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-renderer-html</artifactId><version>2.0.0-SNAPSHOT</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-taglib</artifactId><version>2.0.0-SNAPSHOT</version>
+			</dependency>
+			<dependency>
+				<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-taglib</artifactId><version>2.0.0-SNAPSHOT</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<dependencies>
+		<!-- Java EE -->
 		<dependency>
-			<groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId><version>3.0.1</version>
-			<scope>provided</scope>
-		</dependency>
-		<!-- JSTL: See http://stackoverflow.com/questions/6094329/tomcat-7-and-jstl -->
-		<dependency>
-			<groupId>javax.servlet</groupId><artifactId>jstl</artifactId><version>1.2</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet.jsp</groupId><artifactId>javax.servlet.jsp-api</artifactId><version>2.2.1</version>
+			<groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.glassfish.web</groupId><artifactId>jstl-impl</artifactId><version>1.2</version>
-			<exclusions>
-				<exclusion>
-					<groupId>javax.servlet</groupId><artifactId>servlet-api</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>javax.servlet.jsp</groupId><artifactId>jsp-api</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>javax.servlet.jsp.jstl</groupId><artifactId>jstl-api</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<!-- Open servlet firewall for /webjars/*** -->
-		<dependency>
-			<groupId>com.aoindustries</groupId><artifactId>ao-servlet-firewall-webjars</artifactId><version>1.0.0-SNAPSHOT</version>
+			<groupId>javax.servlet</groupId><artifactId>jstl</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.webjars</groupId><artifactId>jquery</artifactId><version>2.2.4</version>
+			<groupId>javax.servlet.jsp</groupId><artifactId>javax.servlet.jsp-api</artifactId>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.aoindustries</groupId><artifactId>ao-servlet-filter</artifactId><version>1.6.0-validation-SNAPSHOT</version>
+			<groupId>org.glassfish.web</groupId><artifactId>jstl-impl</artifactId>
+		</dependency>
+		<!-- Direct -->
+		<dependency>
+			<groupId>com.aoindustries</groupId><artifactId>ao-servlet-filter</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.aoindustries</groupId><artifactId>ao-taglib</artifactId><version>3.0.0-validation-SNAPSHOT</version>
+			<!-- Open servlet firewall for /webjars/*** -->
+			<groupId>com.aoindustries</groupId><artifactId>ao-servlet-firewall-webjars</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.semanticcms</groupId><artifactId>semanticcms-autogit-model</artifactId><version>2.0.0-SNAPSHOT</version>
+			<groupId>com.aoindustries</groupId><artifactId>ao-taglib</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.semanticcms</groupId><artifactId>semanticcms-autogit-servlet</artifactId><version>2.0.0-SNAPSHOT</version>
+			<groupId>org.webjars</groupId><artifactId>jquery</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-renderer-html</artifactId><version>2.0.0-SNAPSHOT</version>
+			<groupId>com.semanticcms</groupId><artifactId>semanticcms-autogit-model</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-taglib</artifactId><version>2.0.0-SNAPSHOT</version>
+			<groupId>com.semanticcms</groupId><artifactId>semanticcms-autogit-servlet</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-renderer-html</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-taglib</artifactId>
 		</dependency>
 	</dependencies>
 </project>
