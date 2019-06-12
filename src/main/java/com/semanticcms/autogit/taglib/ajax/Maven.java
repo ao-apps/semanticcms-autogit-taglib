@@ -1,6 +1,6 @@
 /*
  * semanticcms-autogit-taglib - SemanticCMS automatic Git in a JSP environment.
- * Copyright (C) 2016, 2017, 2019  AO Industries, Inc.
+ * Copyright (C) 2019  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,25 +22,23 @@
  */
 package com.semanticcms.autogit.taglib.ajax;
 
-import com.semanticcms.core.renderer.html.HtmlRenderer;
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
-import javax.servlet.annotation.WebListener;
+import com.aoindustries.util.PropertiesUtils;
+import java.io.IOException;
+import java.util.Properties;
 
-@WebListener("Registers the scripts and \"" + AjaxInitializer.HEAD_INCLUDE + "\" head include in HtmlRenderer.")
-public class AjaxInitializer implements ServletContextListener {
+/**
+ * @author  AO Industries, Inc.
+ */
+class Maven {
 
-	static final String HEAD_INCLUDE = "/semanticcms-autogit-taglib/head.inc.jspx";
-
-	@Override
-	public void contextInitialized(ServletContextEvent event) {
-		HtmlRenderer htmlRenderer = HtmlRenderer.getInstance(event.getServletContext());
-		htmlRenderer.addScript("jquery", "/webjars/jquery/" + Maven.properties.getProperty("jquery.version") + "/jquery.min.js");
-		htmlRenderer.addHeadInclude(HEAD_INCLUDE);
+	static final Properties properties;
+	static {
+		try {
+			properties = PropertiesUtils.loadFromResource(Maven.class, "Maven.properties");
+		} catch(IOException e) {
+			throw new ExceptionInInitializerError(e);
+		}
 	}
 
-	@Override
-	public void contextDestroyed(ServletContextEvent event) {
-		// Do nothing
-	}
+	private Maven() {}
 }
