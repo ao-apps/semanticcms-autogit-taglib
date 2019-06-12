@@ -1,6 +1,6 @@
 /*
  * semanticcms-autogit-taglib - SemanticCMS automatic Git in a JSP environment.
- * Copyright (C) 2016, 2017  AO Industries, Inc.
+ * Copyright (C) 2016, 2017, 2019  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -35,7 +35,8 @@ public class AjaxInitializer implements ServletContextListener {
 	@Override
 	public void contextInitialized(ServletContextEvent event) {
 		HtmlRenderer htmlRenderer = HtmlRenderer.getInstance(event.getServletContext());
-		htmlRenderer.addScript("jquery", "/webjars/jquery/2.2.4/jquery.min.js");
+		// TODO: Get version from MavenProperties, other places, too (even inside jsps)
+		htmlRenderer.addScript("jquery", "/webjars/jquery/3.4.1/jquery.min.js");
 		htmlRenderer.addHeadInclude(HEAD_INCLUDE);
 	}
 
