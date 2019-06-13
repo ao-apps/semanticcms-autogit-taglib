@@ -1,6 +1,6 @@
 /*
  * semanticcms-autogit-taglib - SemanticCMS automatic Git in a JSP environment.
- * Copyright (C) 2016  AO Industries, Inc.
+ * Copyright (C) 2016, 2019  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -60,7 +60,7 @@ semanticcms_autogit_taglib = {
 	 * If an error occurs, calls onError(textStatus, errorThrown) if provided, otherwise uses default error handler.
 	 */
 	getGitStatus : function(onComplete, onError) {
-		$.ajax({
+		jQuery.ajax({
 			cache : false,
 			type : "GET", // GET because has no side-effects
 			timeout : 60000,
@@ -68,51 +68,51 @@ semanticcms_autogit_taglib = {
 			dataType : "xml",
 			success : function(data, textStatus, jqXHR) {
 				// Parse the response
-				var resultXml = $(data).children('result');
+				var resultXml = jQuery(data).children('result');
 				var states={};
-				$(resultXml).children('states').children('state').each(function(){
-					var name = $(this).attr('name');
-					var toString = $(this).attr('toString');
+				jQuery(resultXml).children('states').children('state').each(function(){
+					var name = jQuery(this).attr('name');
+					var toString = jQuery(this).attr('toString');
 					states[name] = {
 						name: name,
 						toString: function() {
 							return toString;
 						},
-						cssClass : $(this).attr('cssClass')
+						cssClass : jQuery(this).attr('cssClass')
 					};
 				});
 				var changes={};
-				$(resultXml).children('changes').children('change').each(function(){
-					var name = $(this).attr('name');
+				jQuery(resultXml).children('changes').children('change').each(function(){
+					var name = jQuery(this).attr('name');
 					changes[name] = {
 						name: name,
-						cssClass : $(this).attr('cssClass')
+						cssClass : jQuery(this).attr('cssClass')
 					};
 				});
 				var meanings={};
-				$(resultXml).children('meanings').children('meaning').each(function(){
-					var name = $(this).attr('name');
-					var toString = $(this).attr('toString');
+				jQuery(resultXml).children('meanings').children('meaning').each(function(){
+					var name = jQuery(this).attr('name');
+					var toString = jQuery(this).attr('toString');
 					meanings[name] = {
 						name: name,
 						toString: function() {
 							return toString;
 						},
-						state : states[$(this).attr('state')],
-						change : changes[$(this).attr('change')],
+						state : states[jQuery(this).attr('state')],
+						change : changes[jQuery(this).attr('change')],
 					};
 				});
-				var gitStatusXml = $(resultXml).children('gitStatus');
+				var gitStatusXml = jQuery(resultXml).children('gitStatus');
 				var uncommittedChanges=new Array();
-				$(gitStatusXml).children('uncommittedChanges').children('uncommittedChange').each(function(){
+				jQuery(gitStatusXml).children('uncommittedChanges').children('uncommittedChange').each(function(){
 					uncommittedChanges.push(
 						{
-							x: $(this).attr('x'),
-							y: $(this).attr('y'),
-							meaning : meanings[$(this).attr('meaning')],
-							module: $(this).attr('module'),
-							from: $(this).attr('from'),
-							to: $(this).attr('to')
+							x: jQuery(this).attr('x'),
+							y: jQuery(this).attr('y'),
+							meaning : meanings[jQuery(this).attr('meaning')],
+							module: jQuery(this).attr('module'),
+							from: jQuery(this).attr('from'),
+							to: jQuery(this).attr('to')
 						}
 					);
 				});
@@ -121,8 +121,8 @@ semanticcms_autogit_taglib = {
 					changes : changes,
 					meanings : meanings,
 					gitStatus : {
-						statusTime : $(gitStatusXml).attr('statusTime'),
-						state : states[$(gitStatusXml).attr('state')],
+						statusTime : jQuery(gitStatusXml).attr('statusTime'),
+						state : states[jQuery(gitStatusXml).attr('state')],
 						uncommittedChanges : uncommittedChanges
 					}
 				}
@@ -205,7 +205,7 @@ semanticcms_autogit_taglib = {
 /*
  * Kick-off the Git status polling.
  */
-$(document).ready(function(){
+jQuery(document).ready(function(){
 	// Could optimize this and only begin the polling when first listener is added
 	setTimeout(
 		semanticcms_autogit_taglib.pollGitStatus,
