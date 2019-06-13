@@ -35,6 +35,7 @@ public class AjaxInitializer implements ServletContextListener {
 	@Override
 	public void contextInitialized(ServletContextEvent event) {
 		HtmlRenderer htmlRenderer = HtmlRenderer.getInstance(event.getServletContext());
+		// TODO: Return a Script object type instead, with a follow-up of "jQuery.noConflict();"
 		htmlRenderer.addScript("jquery", "/webjars/jquery/" + Maven.properties.getProperty("jquery.version") + "/jquery.min.js");
 		htmlRenderer.addHeadInclude(HEAD_INCLUDE);
 	}
