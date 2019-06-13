@@ -37,7 +37,7 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2016-10-30T15:58:45-0500"
-		dateModified="2019-06-12T23:01:53-0500"
+		dateModified="2019-06-12T23:38:20-0500"
 	>
 		<!-- The current snapshot, unreleased version -->
 		<c:set var="version" value="@{com.semanticcms:semanticcms-autogit-taglib:pom.version}" />
@@ -54,7 +54,7 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 				scmUrl="@{documented.scm.url}"
 			>
 				<ul>
-					<!-- TODO: <li>Minimum Java version changed from 1.6 to 1.7.</li>-->
+					<li>Minimum Java version changed from 1.6 to 1.7.</li>
 					<li>Using managed dependencies:
 						<ol>
 							<li>This project uses transitive managed dependencies.</li>
