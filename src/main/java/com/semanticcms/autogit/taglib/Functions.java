@@ -1,6 +1,6 @@
 /*
  * semanticcms-autogit-taglib - SemanticCMS automatic Git in a JSP environment.
- * Copyright (C) 2016  AO Industries, Inc.
+ * Copyright (C) 2016, 2020  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -25,12 +25,12 @@ package com.semanticcms.autogit.taglib;
 import static com.aoindustries.servlet.filter.FunctionContext.getRequest;
 import static com.aoindustries.servlet.filter.FunctionContext.getServletContext;
 import com.semanticcms.autogit.model.GitStatus;
-import com.semanticcms.autogit.servlet.AutoGitContextListener;
+import com.semanticcms.autogit.servlet.AutoGit;
 
 final public class Functions {
 
 	public static GitStatus getGitStatus() {
-		return AutoGitContextListener.getGitStatus(
+		return AutoGit.getGitStatus(
 			getServletContext(),
 			getRequest()
 		);
