@@ -31,7 +31,7 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 	<jsp:directive.page language="java" pageEncoding="UTF-8" />
 	<jsp:directive.page session="false" />
 	<c:if test="${!core:isExporting()}">
-		<ao:script src="/semanticcms-autogit-taglib/scripts.js" />
+		<ao:script src="/semanticcms-autogit-taglib/semanticcms-autogit-taglib.js" />
 		<ao:script>
 			semanticcms_autogit_taglib.getGitStatusUrl = <ao:out value="${ao:encodeURL(pageContext.request.contextPath.concat('/semanticcms-autogit-taglib/ajax/get-git-status.jspx'))}" />;
 		</ao:script>
