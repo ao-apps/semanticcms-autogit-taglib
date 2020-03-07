@@ -31,7 +31,7 @@ public class SemanticCmsAutoGitTldInitializer extends TagReferenceInitializer {
 	private static final Map<String,String> additionalApiLinks = new LinkedHashMap<String,String>();
 	static {
 		// Self
-		additionalApiLinks.put("com.semanticcms.autogit.taglib.", Maven.properties.getProperty("documented.url") + "apidocs/");
+		additionalApiLinks.put("com.semanticcms.autogit.taglib.", Maven.properties.getProperty("project.url") + "apidocs/");
 		// Dependencies
 		additionalApiLinks.put("com.semanticcms.autogit.model.", "https://semanticcms.com/autogit/model/apidocs/");
 	}
