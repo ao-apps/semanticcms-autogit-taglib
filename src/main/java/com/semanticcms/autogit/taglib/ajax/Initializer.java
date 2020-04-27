@@ -22,6 +22,7 @@
  */
 package com.semanticcms.autogit.taglib.ajax;
 
+import com.aoindustries.lang.Projects;
 import com.semanticcms.core.renderer.html.HtmlRenderer;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -36,7 +37,7 @@ public class Initializer implements ServletContextListener {
 	public void contextInitialized(ServletContextEvent event) {
 		HtmlRenderer htmlRenderer = HtmlRenderer.getInstance(event.getServletContext());
 		// TODO: Return a Script object type instead, with a follow-up of "jQuery.noConflict();"
-		htmlRenderer.addScript("jquery", "/webjars/jquery/" + Maven.properties.getProperty("jquery.version") + "/jquery.min.js");
+		htmlRenderer.addScript("jquery", "/webjars/jquery/" + Projects.getVersion("org.webjars", "jquery", Maven.properties.getProperty("jquery.version")) + "/jquery.min.js");
 		htmlRenderer.addHeadInclude(HEAD_INCLUDE);
 	}
 
