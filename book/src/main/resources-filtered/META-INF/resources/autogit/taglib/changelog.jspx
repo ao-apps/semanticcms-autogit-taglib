@@ -37,7 +37,7 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2016-10-30T15:58:45-0500"
-		dateModified="2020-03-29T02:50:03-05:00"
+		dateModified="2020-04-28T03:08:37-05:00"
 	>
 		<!-- The current snapshot, unreleased version -->
 		<c:set var="version" value="@{com.semanticcms:semanticcms-autogit-taglib:pom.version}" />
@@ -58,6 +58,23 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 				</ul>
 			</changelog:release>
 		</c:if>
+
+		<changelog:release
+			projectName="@{documented.name}"
+			version="1.5.0"
+			datePublished="2020-04-28T03:08:37-05:00"
+			groupId="@{project.groupId}"
+			artifactId="@{documented.artifactId}"
+			scmUrl="@{project.scm.url}"
+		>
+			<ul>
+				<li>
+					Now reading deployed version of <code>org.webjars:jquery</code> from
+					<code>pom.properties</code> instead of assuming the version
+					at build time is also used at runtime.
+				</li>
+			</ul>
+		</changelog:release>
 
 		<changelog:release
 			projectName="@{documented.name}"
