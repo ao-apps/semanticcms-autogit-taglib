@@ -27,9 +27,10 @@ import java.util.Collections;
 
 public class SemanticCmsAutoGitTldInitializer extends TagReferenceInitializer {
 
+	@SuppressWarnings("unchecked")
 	public SemanticCmsAutoGitTldInitializer() {
 		super(
-			"AutoGit Taglib Reference",
+			Maven.properties.getProperty("project.name") + " Reference",
 			"Taglib Reference",
 			"/autogit/taglib",
 			"/semanticcms-autogit.tld",
