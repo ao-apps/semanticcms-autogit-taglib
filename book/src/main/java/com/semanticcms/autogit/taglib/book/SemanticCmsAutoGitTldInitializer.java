@@ -32,9 +32,10 @@ import java.util.Collections;
 
 public class SemanticCmsAutoGitTldInitializer extends TagReferenceInitializer {
 
+	@SuppressWarnings("unchecked")
 	public SemanticCmsAutoGitTldInitializer() throws ValidationException {
 		super(
-			"AutoGit Taglib Reference",
+			Maven.properties.getProperty("project.name") + " Reference",
 			"Taglib Reference",
 			new ResourceRef(
 				new BookRef(
