@@ -64,6 +64,46 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 			<build>
 				<plugins>
 					<plugin>
+						<groupId>org.apache.maven.plugins</groupId><artifactId>maven-dependency-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>unpack.offlinkLinks</id>
+								<phase>generate-sources</phase>
+								<goals><goal>unpack</goal></goals>
+								<configuration>
+									<artifactItems>
+										<!-- Direct -->
+										<artifactItem>
+											<groupId>com.aoindustries</groupId><artifactId>ao-lang</artifactId>
+											<classifier>javadoc</classifier><includes>element-list, package-list</includes>
+											<outputDirectory>${project.build.directory}/offlineLinks/com.aoindustries/ao-lang</outputDirectory>
+										</artifactItem>
+										<artifactItem>
+											<groupId>com.aoindustries</groupId><artifactId>ao-servlet-filter</artifactId>
+											<classifier>javadoc</classifier><includes>element-list, package-list</includes>
+											<outputDirectory>${project.build.directory}/offlineLinks/com.aoindustries/ao-servlet-filter</outputDirectory>
+										</artifactItem>
+										<artifactItem>
+											<groupId>com.semanticcms</groupId><artifactId>semanticcms-autogit-model</artifactId>
+											<classifier>javadoc</classifier><includes>element-list, package-list</includes>
+											<outputDirectory>${project.build.directory}/offlineLinks/com.semanticcms/semanticcms-autogit-model</outputDirectory>
+										</artifactItem>
+										<artifactItem>
+											<groupId>com.semanticcms</groupId><artifactId>semanticcms-autogit-servlet</artifactId>
+											<classifier>javadoc</classifier><includes>element-list, package-list</includes>
+											<outputDirectory>${project.build.directory}/offlineLinks/com.semanticcms/semanticcms-autogit-servlet</outputDirectory>
+										</artifactItem>
+										<artifactItem>
+											<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-renderer-html</artifactId>
+											<classifier>javadoc</classifier><includes>element-list, package-list</includes>
+											<outputDirectory>${project.build.directory}/offlineLinks/com.semanticcms/semanticcms-core-renderer-html</outputDirectory>
+										</artifactItem>
+									</artifactItems>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
 						<groupId>org.apache.maven.plugins</groupId><artifactId>maven-javadoc-plugin</artifactId>
 						<configuration>
 							<links>
@@ -71,12 +111,35 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 								<!-- Java EE -->
 								<link>${javadoc.link.javaee}</link>
 								<!-- Direct -->
-								<link>https://aoindustries.com/ao-lang/apidocs/</link>
-								<link>https://aoindustries.com/ao-servlet-filter/apidocs/</link>
-								<link>https://semanticcms.com/autogit/model/apidocs/</link>
-								<link>https://semanticcms.com/autogit/servlet/apidocs/</link>
-								<!-- TODO: Once published: <link>https://semanticcms.com/core/renderer/html/apidocs/</link> -->
+								<!-- offlineLink: <groupId>com.aoindustries</groupId><artifactId>ao-lang</artifactId> -->
+								<!-- offlineLink: <groupId>com.aoindustries</groupId><artifactId>ao-servlet-filter</artifactId> -->
+								<!-- offlineLink: <groupId>com.semanticcms</groupId><artifactId>semanticcms-autogit-model</artifactId> -->
+								<!-- offlineLink: <groupId>com.semanticcms</groupId><artifactId>semanticcms-autogit-servlet</artifactId> -->
+								<!-- offlineLink: <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-renderer-html</artifactId> -->
 							</links>
+							<offlineLinks>
+								<!-- Direct -->
+								<offlineLink>
+									<url>https://aoindustries.com/ao-lang/apidocs/</url>
+									<location>${project.build.directory}/offlineLinks/com.aoindustries/ao-lang</location>
+								</offlineLink>
+								<offlineLink>
+									<url>https://aoindustries.com/ao-servlet-filter/apidocs/</url>
+									<location>${project.build.directory}/offlineLinks/com.aoindustries/ao-servlet-filter</location>
+								</offlineLink>
+								<offlineLink>
+									<url>https://semanticcms.com/autogit/model/apidocs/</url>
+									<location>${project.build.directory}/offlineLinks/com.semanticcms/semanticcms-autogit-model</location>
+								</offlineLink>
+								<offlineLink>
+									<url>https://semanticcms.com/autogit/servlet/apidocs/</url>
+									<location>${project.build.directory}/offlineLinks/com.semanticcms/semanticcms-autogit-servlet</location>
+								</offlineLink>
+								<offlineLink>
+									<url>https://semanticcms.com/core/renderer/html/apidocs/</url>
+									<location>${project.build.directory}/offlineLinks/com.semanticcms/semanticcms-core-renderer-html</location>
+								</offlineLink>
+							</offlineLinks>
 						</configuration>
 					</plugin>
 				</plugins>
