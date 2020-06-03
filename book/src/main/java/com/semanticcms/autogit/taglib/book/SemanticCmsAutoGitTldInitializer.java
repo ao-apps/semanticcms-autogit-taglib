@@ -23,11 +23,9 @@
 package com.semanticcms.autogit.taglib.book;
 
 import com.semanticcms.tagreference.TagReferenceInitializer;
-import java.util.Collections;
 
 public class SemanticCmsAutoGitTldInitializer extends TagReferenceInitializer {
 
-	@SuppressWarnings("unchecked")
 	public SemanticCmsAutoGitTldInitializer() {
 		super(
 			Maven.properties.getProperty("project.name") + " Reference",
@@ -38,9 +36,9 @@ public class SemanticCmsAutoGitTldInitializer extends TagReferenceInitializer {
 			Maven.properties.getProperty("documented.javadoc.link.javase"),
 			Maven.properties.getProperty("documented.javadoc.link.javaee"),
 			// Self
-			Collections.singletonMap("com.semanticcms.autogit.taglib", Maven.properties.getProperty("project.url") + "apidocs/"),
+			"com.semanticcms.autogit.taglib", Maven.properties.getProperty("project.url") + "apidocs/",
 			// Dependencies
-			Collections.singletonMap("com.semanticcms.autogit.model", "https://semanticcms.com/autogit/model/apidocs/")
+			"com.semanticcms.autogit.model", "https://semanticcms.com/autogit/model/apidocs/"
 		);
 	}
 }
