@@ -97,6 +97,11 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 											<outputDirectory>${project.build.directory}/offlineLinks/com.aoindustries/ao-lang</outputDirectory>
 										</artifactItem>
 										<artifactItem>
+											<groupId>com.aoindustries</groupId><artifactId>ao-net-types</artifactId>
+											<classifier>javadoc</classifier><includes>element-list, package-list</includes>
+											<outputDirectory>${project.build.directory}/offlineLinks/com.aoindustries/ao-net-types</outputDirectory>
+										</artifactItem>
+										<artifactItem>
 											<groupId>com.aoindustries</groupId><artifactId>ao-servlet-filter</artifactId>
 											<classifier>javadoc</classifier><includes>element-list, package-list</includes>
 											<outputDirectory>${project.build.directory}/offlineLinks/com.aoindustries/ao-servlet-filter</outputDirectory>
@@ -133,6 +138,10 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 								<offlineLink>
 									<url>https://aoindustries.com/ao-lang/apidocs/</url>
 									<location>${project.build.directory}/offlineLinks/com.aoindustries/ao-lang</location>
+								</offlineLink>
+								<offlineLink>
+									<url>https://aoindustries.com/ao-net-types/apidocs/</url>
+									<location>${project.build.directory}/offlineLinks/com.aoindustries/ao-net-types</location>
 								</offlineLink>
 								<offlineLink>
 									<url>https://aoindustries.com/ao-servlet-filter/apidocs/</url>
@@ -179,6 +188,9 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 				<groupId>com.aoindustries</groupId><artifactId>ao-lang</artifactId><version>4.5.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
 			</dependency>
 			<dependency>
+				<groupId>com.aoindustries</groupId><artifactId>ao-net-types</artifactId><version>1.2.1${POST-SNAPSHOT}</version>
+			</dependency>
+			<dependency>
 				<groupId>com.aoindustries</groupId><artifactId>ao-servlet-filter</artifactId><version>2.2.0${POST-SNAPSHOT}</version>
 			</dependency>
 			<dependency>
@@ -219,9 +231,6 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 			</dependency>
 			<dependency>
 				<groupId>com.aoindustries</groupId><artifactId>ao-io-buffer</artifactId><version>3.3.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
-			</dependency>
-			<dependency>
-				<groupId>com.aoindustries</groupId><artifactId>ao-net-types</artifactId><version>1.2.1${POST-SNAPSHOT}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.aoindustries</groupId><artifactId>ao-servlet-last-modified</artifactId><version>1.1.2${POST-SNAPSHOT}</version>
@@ -314,6 +323,9 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 		<!-- Direct -->
 		<dependency>
 			<groupId>com.aoindustries</groupId><artifactId>ao-lang</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.aoindustries</groupId><artifactId>ao-net-types</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.aoindustries</groupId><artifactId>ao-servlet-filter</artifactId>

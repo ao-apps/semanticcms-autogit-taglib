@@ -37,7 +37,7 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2016-10-30T15:58:45-0500"
-		dateModified="2020-04-28T03:08:37-05:00"
+		dateModified="2020-08-19T23:33:25-05:00"
 	>
 		<!-- The current snapshot, unreleased version -->
 		<c:set var="version" value="@{com.semanticcms:semanticcms-autogit-taglib:pom.version}" />
@@ -55,6 +55,7 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 			>
 				<ul>
 					<li>Updated for <core:link book="/" page="/" /> 2 compatibility.</li>
+					<li>Now URI-encoding dependency versions obtained at runtime.</li>
 				</ul>
 			</changelog:release>
 		</c:if>
