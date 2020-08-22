@@ -37,7 +37,7 @@ public class Initializer implements ServletContextListener {
 	public void contextInitialized(ServletContextEvent event) {
 		HtmlRenderer htmlRenderer = HtmlRenderer.getInstance(event.getServletContext());
 		// TODO: Return a Script object type instead, with a follow-up of "jQuery.noConflict();"
-		htmlRenderer.addScript("jquery", "/webjars/jquery/" + URIEncoder.encodeURIComponent(Maven.jqueryVersion) + "/jquery.min.js");
+		htmlRenderer.addScript("jquery", "/webjars/jquery/" + URIEncoder.encodeURIComponent(Maven.jqueryVersion) + "/dist/jquery.min.js");
 		htmlRenderer.addHeadInclude(HEAD_INCLUDE);
 	}
 
