@@ -10,6 +10,12 @@
 
 [![Build](https://github.com/aoindustries/semanticcms-autogit-taglib/workflows/Build/badge.svg?branch=1.x)](https://github.com/aoindustries/semanticcms-autogit-taglib/actions?query=workflow%3ABuild)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.semanticcms/semanticcms-autogit-taglib/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.semanticcms/semanticcms-autogit-taglib)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?branch=1.x&project=com.semanticcms%3Asemanticcms-autogit-taglib&metric=alert_status)](https://sonarcloud.io/dashboard?branch=1.x&id=com.semanticcms%3Asemanticcms-autogit-taglib)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?branch=1.x&project=com.semanticcms%3Asemanticcms-autogit-taglib&metric=ncloc)](https://sonarcloud.io/component_measures?branch=1.x&id=com.semanticcms%3Asemanticcms-autogit-taglib&metric=ncloc)  
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?branch=1.x&project=com.semanticcms%3Asemanticcms-autogit-taglib&metric=reliability_rating)](https://sonarcloud.io/component_measures?branch=1.x&id=com.semanticcms%3Asemanticcms-autogit-taglib&metric=Reliability)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?branch=1.x&project=com.semanticcms%3Asemanticcms-autogit-taglib&metric=security_rating)](https://sonarcloud.io/component_measures?branch=1.x&id=com.semanticcms%3Asemanticcms-autogit-taglib&metric=Security)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?branch=1.x&project=com.semanticcms%3Asemanticcms-autogit-taglib&metric=sqale_rating)](https://sonarcloud.io/component_measures?branch=1.x&id=com.semanticcms%3Asemanticcms-autogit-taglib&metric=Maintainability)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?branch=1.x&project=com.semanticcms%3Asemanticcms-autogit-taglib&metric=coverage)](https://sonarcloud.io/component_measures?branch=1.x&id=com.semanticcms%3Asemanticcms-autogit-taglib&metric=Coverage)
 
 [SemanticCMS automatic Git](https://github.com/aoindustries/semanticcms-autogit) in a JSP environment.
 
