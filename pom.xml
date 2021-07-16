@@ -39,7 +39,7 @@ along with semanticcms-autogit-taglib.  If not, see <http://www.gnu.org/licenses
 / <a target="${javadoc.target}" href="${project.url}">Taglib</a>]]></javadoc.breadcrumbs>
 		<description.html><![CDATA[<a target="${javadoc.target}" href="https://semanticcms.com/autogit/">SemanticCMS automatic Git</a> in a JSP environment.]]></description.html>
 		<javadoc.taglibReference><![CDATA[<li><a target="${javadoc.target}" href="${project.url}semanticcms-autogit.tld/">Taglib Reference</a></li>]]></javadoc.taglibReference>
-		<!-- SonarCloud.io -->
+		<!-- SonarQube -->
 		<sonar.projectKey>${project.groupId}:${project.artifactId}</sonar.projectKey>
 		<sonar.organization>aoindustries</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
