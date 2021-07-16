@@ -9,6 +9,7 @@
 [![license: LGPL v3](https://semanticcms.com/ao-badges/license-lgpl-3.0.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 
 [![Build](https://github.com/aoindustries/semanticcms-autogit-taglib/workflows/Build/badge.svg?branch=1.x)](https://github.com/aoindustries/semanticcms-autogit-taglib/actions?query=workflow%3ABuild)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.semanticcms/semanticcms-autogit-taglib/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.semanticcms/semanticcms-autogit-taglib)
 
 [SemanticCMS automatic Git](https://github.com/aoindustries/semanticcms-autogit) in a JSP environment.
 
