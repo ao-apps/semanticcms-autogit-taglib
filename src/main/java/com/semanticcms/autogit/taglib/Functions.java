@@ -27,7 +27,7 @@ import static com.aoapps.servlet.filter.FunctionContext.getServletContext;
 import com.semanticcms.autogit.model.GitStatus;
 import com.semanticcms.autogit.servlet.AutoGit;
 
-final public class Functions {
+public final class Functions {
 
 	public static GitStatus getGitStatus() {
 		return AutoGit.getGitStatus(
