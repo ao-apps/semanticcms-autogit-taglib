@@ -27,18 +27,15 @@ import static com.aoapps.servlet.filter.FunctionContext.getServletContext;
 import com.semanticcms.autogit.model.GitStatus;
 import com.semanticcms.autogit.servlet.AutoGit;
 
-public final class Functions {
+public abstract class Functions {
+
+	/** Make no instances. */
+	private Functions() {throw new AssertionError();}
 
 	public static GitStatus getGitStatus() {
 		return AutoGit.getGitStatus(
 			getServletContext(),
 			getRequest()
 		);
-	}
-
-	/**
-	 * Make no instances.
-	 */
-	private Functions() {
 	}
 }

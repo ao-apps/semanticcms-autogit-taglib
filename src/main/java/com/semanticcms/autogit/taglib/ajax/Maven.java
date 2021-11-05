@@ -30,7 +30,10 @@ import java.util.Properties;
 /**
  * @author  AO Industries, Inc.
  */
-class Maven {
+abstract class Maven {
+
+	/** Make no instances. */
+	private Maven() {throw new AssertionError();}
 
 	static final String jqueryVersion;
 
@@ -42,6 +45,4 @@ class Maven {
 			throw new ExceptionInInitializerError(e);
 		}
 	}
-
-	private Maven() {}
 }
