@@ -268,7 +268,7 @@ along with semanticcms-autogit-taglib.  If not, see <https://www.gnu.org/license
 				<groupId>com.semanticcms</groupId><artifactId>semanticcms-autogit-servlet</artifactId><version>1.5.2-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
 			</dependency>
 			<dependency>
-				<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-servlet</artifactId><version>1.18.2-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+				<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-servlet</artifactId><version>1.18.2${POST-SNAPSHOT}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-taglib</artifactId><version>1.15.2-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
