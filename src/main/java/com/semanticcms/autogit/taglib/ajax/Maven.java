@@ -20,6 +20,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with semanticcms-autogit-taglib.  If not, see <https://www.gnu.org/licenses/>.
  */
+
 package com.semanticcms.autogit.taglib.ajax;
 
 import com.aoapps.lang.Projects;
