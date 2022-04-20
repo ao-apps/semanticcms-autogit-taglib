@@ -30,13 +30,15 @@ import com.semanticcms.autogit.servlet.AutoGit;
 
 public final class Functions {
 
-	/** Make no instances. */
-	private Functions() {throw new AssertionError();}
+  /** Make no instances. */
+  private Functions() {
+    throw new AssertionError();
+  }
 
-	public static GitStatus getGitStatus() {
-		return AutoGit.getGitStatus(
-			getServletContext(),
-			getRequest()
-		);
-	}
+  public static GitStatus getGitStatus() {
+    return AutoGit.getGitStatus(
+      getServletContext(),
+      getRequest()
+    );
+  }
 }

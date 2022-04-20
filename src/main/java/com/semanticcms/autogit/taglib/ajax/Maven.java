@@ -33,17 +33,19 @@ import java.util.Properties;
  */
 final class Maven {
 
-	/** Make no instances. */
-	private Maven() {throw new AssertionError();}
+  /** Make no instances. */
+  private Maven() {
+    throw new AssertionError();
+  }
 
-	static final String jqueryVersion;
+  static final String jqueryVersion;
 
-	static {
-		try {
-			Properties properties = PropertiesUtils.loadFromResource(Maven.class, "Maven.properties");
-			jqueryVersion = Projects.getVersion("org.webjars.npm", "jquery", properties.getProperty("jqueryVersion"));
-		} catch(IOException e) {
-			throw new ExceptionInInitializerError(e);
-		}
-	}
+  static {
+    try {
+      Properties properties = PropertiesUtils.loadFromResource(Maven.class, "Maven.properties");
+      jqueryVersion = Projects.getVersion("org.webjars.npm", "jquery", properties.getProperty("jqueryVersion"));
+    } catch (IOException e) {
+      throw new ExceptionInInitializerError(e);
+    }
+  }
 }

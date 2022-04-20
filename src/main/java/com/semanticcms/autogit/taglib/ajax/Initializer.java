@@ -32,18 +32,18 @@ import javax.servlet.annotation.WebListener;
 @WebListener("Registers the scripts and \"" + Initializer.HEAD_INCLUDE + "\" head include in SemanticCMS.")
 public class Initializer implements ServletContextListener {
 
-	static final String HEAD_INCLUDE = "/semanticcms-autogit-taglib/head.inc.jspx";
+  static final String HEAD_INCLUDE = "/semanticcms-autogit-taglib/head.inc.jspx";
 
-	@Override
-	public void contextInitialized(ServletContextEvent event) {
-		SemanticCMS semanticCMS = SemanticCMS.getInstance(event.getServletContext());
-		// TODO: Return a Script object type instead, with a follow-up of "jQuery.noConflict();"
-		semanticCMS.addScript("jquery", "/webjars/jquery/" + URIEncoder.encodeURIComponent(Maven.jqueryVersion) + "/dist/jquery.min.js");
-		semanticCMS.addHeadInclude(HEAD_INCLUDE);
-	}
+  @Override
+  public void contextInitialized(ServletContextEvent event) {
+    SemanticCMS semanticCMS = SemanticCMS.getInstance(event.getServletContext());
+    // TODO: Return a Script object type instead, with a follow-up of "jQuery.noConflict();"
+    semanticCMS.addScript("jquery", "/webjars/jquery/" + URIEncoder.encodeURIComponent(Maven.jqueryVersion) + "/dist/jquery.min.js");
+    semanticCMS.addHeadInclude(HEAD_INCLUDE);
+  }
 
-	@Override
-	public void contextDestroyed(ServletContextEvent event) {
-		// Do nothing
-	}
+  @Override
+  public void contextDestroyed(ServletContextEvent event) {
+    // Do nothing
+  }
 }

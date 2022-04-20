@@ -27,19 +27,19 @@ import com.semanticcms.tagreference.TagReferenceInitializer;
 
 public class SemanticCmsAutoGitTldInitializer extends TagReferenceInitializer {
 
-	public SemanticCmsAutoGitTldInitializer() {
-		super(
-			Maven.properties.getProperty("documented.name") + " Reference",
-			"Taglib Reference",
-			"/autogit/taglib",
-			"/semanticcms-autogit.tld",
-			true,
-			Maven.properties.getProperty("documented.javadoc.link.javase"),
-			Maven.properties.getProperty("documented.javadoc.link.javaee"),
-			// Self
-			"com.semanticcms.autogit.taglib", Maven.properties.getProperty("project.url") + "apidocs/com.semanticcms.autogit.taglib/",
-			// Dependencies
-			"com.semanticcms.autogit.model", "https://semanticcms.com/autogit/model/apidocs/com.semanticcms.autogit.model/"
-		);
-	}
+  public SemanticCmsAutoGitTldInitializer() {
+    super(
+      Maven.properties.getProperty("documented.name") + " Reference",
+      "Taglib Reference",
+      "/autogit/taglib",
+      "/semanticcms-autogit.tld",
+      true,
+      Maven.properties.getProperty("documented.javadoc.link.javase"),
+      Maven.properties.getProperty("documented.javadoc.link.javaee"),
+      // Self
+      "com.semanticcms.autogit.taglib", Maven.properties.getProperty("project.url") + "apidocs/com.semanticcms.autogit.taglib/",
+      // Dependencies
+      "com.semanticcms.autogit.model", "https://semanticcms.com/autogit/model/apidocs/com.semanticcms.autogit.model/"
+    );
+  }
 }
