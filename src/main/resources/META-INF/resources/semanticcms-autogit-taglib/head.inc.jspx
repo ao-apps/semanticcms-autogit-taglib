@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 semanticcms-autogit-taglib - SemanticCMS automatic Git in a JSP environment.
-Copyright (C) 2016, 2020, 2021  AO Industries, Inc.
-	support@aoindustries.com
-	7262 Bull Pen Cir
-	Mobile, AL 36695
+Copyright (C) 2016, 2020, 2021, 2022  AO Industries, Inc.
+    support@aoindustries.com
+    7262 Bull Pen Cir
+    Mobile, AL 36695
 
 This file is part of semanticcms-autogit-taglib.
 
@@ -22,18 +22,18 @@ You should have received a copy of the GNU Lesser General Public License
 along with semanticcms-autogit-taglib.  If not, see <https://www.gnu.org/licenses/>.
 -->
 <jsp:root
-	xmlns:ao="https://oss.aoapps.com/taglib/"
-	xmlns:c="http://java.sun.com/jsp/jstl/core"
-	xmlns:core="https://semanticcms.com/core/taglib/"
-	xmlns:jsp="http://java.sun.com/JSP/Page"
-	version="2.1"
+  xmlns:ao="https://oss.aoapps.com/taglib/"
+  xmlns:c="http://java.sun.com/jsp/jstl/core"
+  xmlns:core="https://semanticcms.com/core/taglib/"
+  xmlns:jsp="http://java.sun.com/JSP/Page"
+  version="2.1"
 >
-	<jsp:directive.page language="java" pageEncoding="UTF-8" />
-	<jsp:directive.page session="false" />
-	<c:if test="${!core:isExporting()}">
-		<ao:script src="/semanticcms-autogit-taglib/semanticcms-autogit-taglib.js" />
-		<ao:script>
-			semanticcms_autogit_taglib.getGitStatusUrl = <ao:out value="${ao:encodeURL(pageContext.request.contextPath.concat('/semanticcms-autogit-taglib/ajax/get-git-status.jspx'))}" />;
-		</ao:script>
-	</c:if>
+  <jsp:directive.page language="java" pageEncoding="UTF-8" />
+  <jsp:directive.page session="false" />
+  <c:if test="${!core:isExporting()}">
+    <ao:script src="/semanticcms-autogit-taglib/semanticcms-autogit-taglib.js" />
+    <ao:script>
+      semanticcms_autogit_taglib.getGitStatusUrl = <ao:out value="${ao:encodeURL(pageContext.request.contextPath.concat('/semanticcms-autogit-taglib/ajax/get-git-status.jspx'))}" />;
+    </ao:script>
+  </c:if>
 </jsp:root>

@@ -32,18 +32,18 @@ import javax.servlet.annotation.WebListener;
 @WebListener("Registers the scripts and \"" + Initializer.HEAD_INCLUDE + "\" head include in HtmlRenderer.")
 public class Initializer implements ServletContextListener {
 
-	static final String HEAD_INCLUDE = "/semanticcms-autogit-taglib/head.inc.jspx";
+  static final String HEAD_INCLUDE = "/semanticcms-autogit-taglib/head.inc.jspx";
 
-	@Override
-	public void contextInitialized(ServletContextEvent event) {
-		HtmlRenderer htmlRenderer = HtmlRenderer.getInstance(event.getServletContext());
-		// TODO: Return a Script object type instead, with a follow-up of "jQuery.noConflict();"
-		htmlRenderer.addScript("jquery", "/webjars/jquery/" + URIEncoder.encodeURIComponent(Maven.jqueryVersion) + "/dist/jquery.min.js");
-		htmlRenderer.addHeadInclude(HEAD_INCLUDE);
-	}
+  @Override
+  public void contextInitialized(ServletContextEvent event) {
+    HtmlRenderer htmlRenderer = HtmlRenderer.getInstance(event.getServletContext());
+    // TODO: Return a Script object type instead, with a follow-up of "jQuery.noConflict();"
+    htmlRenderer.addScript("jquery", "/webjars/jquery/" + URIEncoder.encodeURIComponent(Maven.jqueryVersion) + "/dist/jquery.min.js");
+    htmlRenderer.addHeadInclude(HEAD_INCLUDE);
+  }
 
-	@Override
-	public void contextDestroyed(ServletContextEvent event) {
-		// Do nothing
-	}
+  @Override
+  public void contextDestroyed(ServletContextEvent event) {
+    // Do nothing
+  }
 }
