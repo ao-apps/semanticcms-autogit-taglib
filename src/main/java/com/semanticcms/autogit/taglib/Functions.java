@@ -37,8 +37,8 @@ public final class Functions {
 
   public static GitStatus getGitStatus() {
     return AutoGit.getGitStatus(
-      getServletContext(),
-      getRequest()
+        getServletContext(),
+        getRequest()
     );
   }
 }
