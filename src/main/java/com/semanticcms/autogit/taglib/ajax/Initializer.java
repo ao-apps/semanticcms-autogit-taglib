@@ -29,6 +29,9 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
+/**
+ * Registers the scripts and "{@link Initializer#HEAD_INCLUDE}" head include in {@link SemanticCMS}.
+ */
 @WebListener("Registers the scripts and \"" + Initializer.HEAD_INCLUDE + "\" head include in SemanticCMS.")
 public class Initializer implements ServletContextListener {
 
@@ -36,10 +39,10 @@ public class Initializer implements ServletContextListener {
 
   @Override
   public void contextInitialized(ServletContextEvent event) {
-    SemanticCMS semanticCMS = SemanticCMS.getInstance(event.getServletContext());
+    SemanticCMS semanticCms = SemanticCMS.getInstance(event.getServletContext());
     // TODO: Return a Script object type instead, with a follow-up of "jQuery.noConflict();"
-    semanticCMS.addScript("jquery", "/webjars/jquery/" + URIEncoder.encodeURIComponent(Maven.jqueryVersion) + "/dist/jquery.min.js");
-    semanticCMS.addHeadInclude(HEAD_INCLUDE);
+    semanticCms.addScript("jquery", "/webjars/jquery/" + URIEncoder.encodeURIComponent(Maven.jqueryVersion) + "/dist/jquery.min.js");
+    semanticCms.addHeadInclude(HEAD_INCLUDE);
   }
 
   @Override

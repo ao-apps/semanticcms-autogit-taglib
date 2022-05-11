@@ -24,9 +24,16 @@
 package com.semanticcms.autogit.taglib.book;
 
 import com.semanticcms.tagreference.TagReferenceInitializer;
+import javax.servlet.ServletContainerInitializer;
 
+/**
+ * Initializes a tag reference during {@linkplain ServletContainerInitializer application start-up}.
+ */
 public class SemanticCmsAutoGitTldInitializer extends TagReferenceInitializer {
 
+  /**
+   * Parses the TLD file.
+   */
   public SemanticCmsAutoGitTldInitializer() {
     super(
         Maven.properties.getProperty("documented.name") + " Reference",
