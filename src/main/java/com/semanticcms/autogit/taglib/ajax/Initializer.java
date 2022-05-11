@@ -29,6 +29,9 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
+/**
+ * Registers the scripts and "{@link Initializer#HEAD_INCLUDE}" head include in {@link HtmlRenderer}.
+ */
 @WebListener("Registers the scripts and \"" + Initializer.HEAD_INCLUDE + "\" head include in HtmlRenderer.")
 public class Initializer implements ServletContextListener {
 

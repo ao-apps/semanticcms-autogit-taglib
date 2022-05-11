@@ -25,9 +25,13 @@ package com.semanticcms.autogit.taglib;
 
 import static com.aoapps.servlet.filter.FunctionContext.getRequest;
 import static com.aoapps.servlet.filter.FunctionContext.getServletContext;
+
 import com.semanticcms.autogit.model.GitStatus;
 import com.semanticcms.autogit.servlet.AutoGit;
 
+/**
+ * Tag library function implementations.
+ */
 public final class Functions {
 
   /** Make no instances. */
@@ -35,6 +39,11 @@ public final class Functions {
     throw new AssertionError();
   }
 
+  /**
+   * Gets the current Git status.  Results are cached per request so
+   * multiple calls within a single request will always get the Git
+   * status from the same moment in time.
+   */
   public static GitStatus getGitStatus() {
     return AutoGit.getGitStatus(
         getServletContext(),
