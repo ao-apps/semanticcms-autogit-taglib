@@ -47,7 +47,7 @@ along with semanticcms-autogit-taglib.  If not, see <https://www.gnu.org/license
     <sonar.coverage.exclusions>**.*</sonar.coverage.exclusions>
   </properties>
 
-  <name>SemanticCMS AutoGit Taglib²</name>
+  <name>SemanticCMS AutoGit Taglib</name>
   <url>https://semanticcms.com/autogit/taglib/</url>
   <description>SemanticCMS automatic Git in a JSP environment.</description>
   <inceptionYear>2016</inceptionYear>
