@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 semanticcms-autogit-taglib - SemanticCMS automatic Git in a JSP environment.
-Copyright (C) 2016, 2017, 2018, 2019, 2020, 2021, 2022  AO Industries, Inc.
+Copyright (C) 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -364,7 +364,7 @@ along with semanticcms-autogit-taglib.  If not, see <https://www.gnu.org/license
         <groupId>com.aoapps</groupId><artifactId>ao-servlet-firewall-webjars</artifactId><version>0.1.0${POST-SNAPSHOT}</version>
       </dependency>
       <dependency>
-        <groupId>org.webjars.npm</groupId><artifactId>jquery</artifactId><version>3.6.2</version>
+        <groupId>org.webjars.npm</groupId><artifactId>jquery</artifactId><version>3.6.3</version>
       </dependency>
       <!-- javaee-web-api-bom: <groupId>org.apache.taglibs</groupId><artifactId>taglibs-standard-impl</artifactId> -->
       <!-- Runtime Transitive -->
