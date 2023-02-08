@@ -33,6 +33,7 @@ along with semanticcms-autogit-taglib.  If not, see <https://www.gnu.org/license
   <packaging>bundle</packaging>
 
   <properties>
+    <project.build.outputTimestamp>2023-02-08T21:06:04Z</project.build.outputTimestamp>
     <module.name>com.semanticcms.autogit.taglib.book</module.name>
     <!-- These values are copied from the project being documented -->
     <documented.artifactId>semanticcms-autogit-taglib</documented.artifactId>
