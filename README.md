@@ -24,7 +24,7 @@
 * [Changelog](https://semanticcms.com/autogit/taglib/changelog)
 * [Taglib Reference](https://semanticcms.com/autogit/taglib/semanticcms-autogit.tld/)
 * [API Docs](https://semanticcms.com/autogit/taglib/apidocs/)
-* [Maven Central Repository](https://search.maven.org/artifact/com.semanticcms/semanticcms-autogit-taglib)
+* [Maven Central Repository](https://central.sonatype.com/search?namespace=com.semanticcms&q=a%3Asemanticcms-autogit-taglib)
 * [GitHub](https://github.com/ao-apps/semanticcms-autogit-taglib)
 
 ## Contact Us
