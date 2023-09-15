@@ -119,10 +119,6 @@ along with semanticcms-autogit-taglib.  If not, see <https://www.gnu.org/license
             <dependency>com.aoapps:ao-taglib</dependency>
             <dependency>com.semanticcms:semanticcms-core-taglib</dependency>
             <dependency>org.apache.taglibs:taglibs-standard-spec</dependency>
-            <!-- Runtime Direct -->
-            <dependency>com.aoapps:ao-servlet-firewall-webjars</dependency>
-            <dependency>org.webjars.npm:jquery</dependency>
-            <dependency>org.apache.taglibs:taglibs-standard-impl</dependency>
           </usedDependencies>
         </configuration>
       </plugin>
@@ -403,9 +399,9 @@ along with semanticcms-autogit-taglib.  If not, see <https://www.gnu.org/license
       <dependency>
         <groupId>com.aoapps</groupId><artifactId>ao-servlet-firewall-rules</artifactId><version>0.2.0${POST-SNAPSHOT}</version>
       </dependency>
-      <!-- BOM -->
+      <!-- Imports -->
       <dependency>
-        <groupId>com.aoapps</groupId><artifactId>javaee-web-api-bom</artifactId><version>7.0.1${POST-SNAPSHOT}</version>
+        <groupId>com.aoapps</groupId><artifactId>javaee-web-api-bom</artifactId><version>7.0.1-POST-SNAPSHOT</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -457,6 +453,12 @@ along with semanticcms-autogit-taglib.  If not, see <https://www.gnu.org/license
     <dependency>
       <groupId>org.apache.taglibs</groupId><artifactId>taglibs-standard-impl</artifactId>
       <scope>runtime</scope>
+    </dependency>
+    <!-- Imports (Reactor build order only) -->
+    <dependency>
+      <groupId>com.aoapps</groupId><artifactId>javaee-web-api-bom</artifactId><version>7.0.1-POST-SNAPSHOT</version>
+      <type>pom</type>
+      <exclusions><exclusion><artifactId>*</artifactId><groupId>*</groupId></exclusion></exclusions>
     </dependency>
   </dependencies>
 </project>
