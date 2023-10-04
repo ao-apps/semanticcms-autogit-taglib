@@ -142,16 +142,6 @@ along with semanticcms-autogit-taglib.  If not, see <https://www.gnu.org/license
                   <artifactItems>
                     <!-- Direct -->
                     <artifactItem>
-                      <groupId>com.aoapps</groupId><artifactId>ao-lang</artifactId><classifier>javadoc</classifier>
-                      <includes>element-list, package-list</includes>
-                      <outputDirectory>${project.build.directory}/offlineLinks/com.aoapps/ao-lang</outputDirectory>
-                    </artifactItem>
-                    <artifactItem>
-                      <groupId>com.aoapps</groupId><artifactId>ao-net-types</artifactId><classifier>javadoc</classifier>
-                      <includes>element-list, package-list</includes>
-                      <outputDirectory>${project.build.directory}/offlineLinks/com.aoapps/ao-net-types</outputDirectory>
-                    </artifactItem>
-                    <artifactItem>
                       <groupId>com.aoapps</groupId><artifactId>ao-servlet-filter</artifactId><classifier>javadoc</classifier>
                       <includes>element-list, package-list</includes>
                       <outputDirectory>${project.build.directory}/offlineLinks/com.aoapps/ao-servlet-filter</outputDirectory>
@@ -185,14 +175,6 @@ along with semanticcms-autogit-taglib.  If not, see <https://www.gnu.org/license
             <configuration>
               <offlineLinks combine.children="append">
                 <!-- Direct -->
-                <offlineLink>
-                  <url>https://oss.aoapps.com/lang/apidocs/</url>
-                  <location>${project.build.directory}/offlineLinks/com.aoapps/ao-lang</location>
-                </offlineLink>
-                <offlineLink>
-                  <url>https://oss.aoapps.com/net-types/apidocs/</url>
-                  <location>${project.build.directory}/offlineLinks/com.aoapps/ao-net-types</location>
-                </offlineLink>
                 <offlineLink>
                   <url>https://oss.aoapps.com/servlet-filter/apidocs/</url>
                   <location>${project.build.directory}/offlineLinks/com.aoapps/ao-servlet-filter</location>
@@ -272,12 +254,6 @@ along with semanticcms-autogit-taglib.  If not, see <https://www.gnu.org/license
     <dependencies>
       <!-- Direct -->
       <dependency>
-        <groupId>com.aoapps</groupId><artifactId>ao-lang</artifactId><version>5.6.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
-      </dependency>
-      <dependency>
-        <groupId>com.aoapps</groupId><artifactId>ao-net-types</artifactId><version>2.0.2${POST-SNAPSHOT}</version>
-      </dependency>
-      <dependency>
         <groupId>com.aoapps</groupId><artifactId>ao-servlet-filter</artifactId><version>3.0.3${POST-SNAPSHOT}</version>
       </dependency>
       <dependency>
@@ -324,6 +300,12 @@ along with semanticcms-autogit-taglib.  If not, see <https://www.gnu.org/license
       </dependency>
       <dependency>
         <groupId>com.aoapps</groupId><artifactId>ao-io-buffer</artifactId><version>4.1.0${POST-SNAPSHOT}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.aoapps</groupId><artifactId>ao-lang</artifactId><version>5.6.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+      </dependency>
+      <dependency>
+        <groupId>com.aoapps</groupId><artifactId>ao-net-types</artifactId><version>2.0.2${POST-SNAPSHOT}</version>
       </dependency>
       <dependency>
         <groupId>com.aoapps</groupId><artifactId>ao-servlet-last-modified</artifactId><version>3.0.1${POST-SNAPSHOT}</version>
@@ -382,26 +364,7 @@ along with semanticcms-autogit-taglib.  If not, see <https://www.gnu.org/license
         <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-servlet</artifactId><version>2.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
       </dependency>
       <!-- Runtime Direct -->
-      <dependency>
-        <groupId>com.aoapps</groupId><artifactId>ao-servlet-firewall-webjars</artifactId><version>0.1.0${POST-SNAPSHOT}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.webjars.npm</groupId><artifactId>jquery</artifactId><version>3.7.1</version>
-      </dependency>
       <!-- javaee-web-api-bom: <groupId>org.apache.taglibs</groupId><artifactId>taglibs-standard-impl</artifactId> -->
-      <!-- Runtime Transitive -->
-      <dependency>
-        <groupId>com.aoapps</groupId><artifactId>ao-net-path-space</artifactId><version>0.1.0${POST-SNAPSHOT}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.aoapps</groupId><artifactId>ao-servlet-firewall-api</artifactId><version>0.1.0${POST-SNAPSHOT}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.aoapps</groupId><artifactId>ao-servlet-firewall-path-space</artifactId><version>0.1.1${POST-SNAPSHOT}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.aoapps</groupId><artifactId>ao-servlet-firewall-rules</artifactId><version>0.2.0${POST-SNAPSHOT}</version>
-      </dependency>
       <!-- Imports -->
       <dependency>
         <groupId>com.aoapps</groupId><artifactId>javaee-web-api-bom</artifactId><version>7.0.1-POST-SNAPSHOT</version>
@@ -413,12 +376,6 @@ along with semanticcms-autogit-taglib.  If not, see <https://www.gnu.org/license
 
   <dependencies>
     <!-- Direct -->
-    <dependency>
-      <groupId>com.aoapps</groupId><artifactId>ao-lang</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.aoapps</groupId><artifactId>ao-net-types</artifactId>
-    </dependency>
     <dependency>
       <groupId>com.aoapps</groupId><artifactId>ao-servlet-filter</artifactId>
     </dependency>
@@ -444,15 +401,6 @@ along with semanticcms-autogit-taglib.  If not, see <https://www.gnu.org/license
       <groupId>org.apache.taglibs</groupId><artifactId>taglibs-standard-spec</artifactId>
     </dependency>
     <!-- Runtime Direct -->
-    <dependency>
-      <!-- Open servlet firewall for /webjars/*** -->
-      <groupId>com.aoapps</groupId><artifactId>ao-servlet-firewall-webjars</artifactId>
-      <scope>runtime</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.webjars.npm</groupId><artifactId>jquery</artifactId>
-      <scope>runtime</scope>
-    </dependency>
     <dependency>
       <groupId>org.apache.taglibs</groupId><artifactId>taglibs-standard-impl</artifactId>
       <scope>runtime</scope>
