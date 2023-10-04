@@ -1,6 +1,6 @@
 /*
  * semanticcms-autogit-taglib - SemanticCMS automatic Git in a JSP environment.
- * Copyright (C) 2016, 2019, 2022  AO Industries, Inc.
+ * Copyright (C) 2016, 2019, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -36,18 +36,16 @@ semanticcms_autogit_taglib = {
   GIT_STATUS_POLL_INTERVAL_ERROR : 10000, // Ten seconds
 
   /*
-   * The getGitStatusUrl of the application.  This is set by JSP just after this
-   * script is included.
+   * The getGitStatusUrl of the application.  This is set by JSP in a script onload event.
    */
   getGitStatusUrl : "",
 
   /*
    * Handles error messages from Ajax calls.
    */
-  handleAjaxError : function(message, jqXHR, errorThrown) {
+  handleAjaxError : function(message, errorThrown) {
     window.alert(
       message + "\n"
-      + "Status Code = " + jqXHR.status + "\n"
       + "Error Thrown = " + errorThrown
     );
   },
@@ -57,90 +55,62 @@ semanticcms_autogit_taglib = {
    *
    * Once the status is available, calls onComplete(result).
    *
-   * If an error occurs, calls onError(textStatus, errorThrown) if provided, otherwise uses default error handler.
+   * If an error occurs, calls onError(errorThrown) if provided, otherwise uses default error handler.
    */
-  getGitStatus : function(onComplete, onError) {
-    jQuery.ajax({
-      cache : false,
-      type : "GET", // GET because has no side-effects
-      timeout : 60000,
-      url : semanticcms_autogit_taglib.getGitStatusUrl,
-      dataType : "xml",
-      success : function(data, textStatus, jqXHR) {
+  getGitStatus : async function(onComplete, onError) {
+    // See https://saturncloud.io/blog/how-to-make-an-ajax-call-without-jquery/
+    // See https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+    // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises
+    // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
+    // See https://developer.mozilla.org/en-US/docs/Web/API/fetch
+    // See https://developer.mozilla.org/en-US/docs/Web/API/Response
+    // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON
+    try {
+      const response = await fetch(semanticcms_autogit_taglib.getGitStatusUrl, {
+        method : "GET", // GET because has no side-effects
+        mode : "same-origin",
+        cache : "no-store",
+        redirect : "error"
+      });
+      if (response.ok) {
         // Parse the response
-        var resultXml = jQuery(data).children('result');
-        var states={};
-        jQuery(resultXml).children('states').children('state').each(function() {
-          var name = jQuery(this).attr('name');
-          var toString = jQuery(this).attr('toString');
-          states[name] = {
-            name: name,
-            toString: function() {
-              return toString;
-            },
-            cssClass : jQuery(this).attr('cssClass')
-          };
+        let result = await response.json();
+        Object.values(result.states).forEach((state) => {
+          // Replace toStringValue with toString functions
+          let toStringValue = state.toStringValue;
+          state.toString = () => toStringValue;
+          delete state.toStringValue;
         });
-        var changes={};
-        jQuery(resultXml).children('changes').children('change').each(function() {
-          var name = jQuery(this).attr('name');
-          changes[name] = {
-            name: name,
-            cssClass : jQuery(this).attr('cssClass')
-          };
+        Object.values(result.meanings).forEach((meaning) => {
+          // Replace toStringValue with toString functions
+          let toStringValue = meaning.toStringValue;
+          meaning.toString = () => toStringValue;
+          delete meaning.toStringValue;
+          // Replace values with objects
+          meaning.state = result.states[meaning.state];
+          meaning.change = result.changes[meaning.change];
         });
-        var meanings={};
-        jQuery(resultXml).children('meanings').children('meaning').each(function() {
-          var name = jQuery(this).attr('name');
-          var toString = jQuery(this).attr('toString');
-          meanings[name] = {
-            name: name,
-            toString: function() {
-              return toString;
-            },
-            state : states[jQuery(this).attr('state')],
-            change : changes[jQuery(this).attr('change')],
-          };
+        Object.values(result.gitStatus.uncommittedChanges).forEach((uncommittedChange) => {
+          // Replace values with objects
+          uncommittedChange.meaning = result.meanings[uncommittedChange.meaning];
         });
-        var gitStatusXml = jQuery(resultXml).children('gitStatus');
-        var uncommittedChanges=new Array();
-        jQuery(gitStatusXml).children('uncommittedChanges').children('uncommittedChange').each(function() {
-          uncommittedChanges.push(
-            {
-              x: jQuery(this).attr('x'),
-              y: jQuery(this).attr('y'),
-              meaning : meanings[jQuery(this).attr('meaning')],
-              module: jQuery(this).attr('module'),
-              from: jQuery(this).attr('from'),
-              to: jQuery(this).attr('to')
-            }
-          );
-        });
-        var result = {
-          states : states,
-          changes : changes,
-          meanings : meanings,
-          gitStatus : {
-            statusTime : jQuery(gitStatusXml).attr('statusTime'),
-            state : states[jQuery(gitStatusXml).attr('state')],
-            uncommittedChanges : uncommittedChanges
-          }
-        }
-        // console.log(result);
+        // Replace values with objects
+        result.gitStatus.state = result.states[result.gitStatus.state];
+        // console.log(JSON.stringify(result, null, 2));
         if (onComplete) onComplete(result);
-      },
-      error : function(jqXHR, textStatus, errorThrown) {
-        if (onError) {
-          onError(textStatus, errorThrown);
-        } else {
-          semanticcms_autogit_taglib.handleAjaxError(
-            "Unable to get Git status",
-            jqXHR,
-            errorThrown
-          );
-        }
+      } else {
+        throw new Error("Request failed: " + response.status + " " + response.statusText);
       }
-    });
+    } catch (errorThrown) {
+      if (onError) {
+        onError(errorThrown);
+      } else {
+        semanticcms_autogit_taglib.handleAjaxError(
+          "Unable to get Git status",
+          errorThrown
+        );
+      }
+    }
   },
 
   /**
@@ -173,8 +143,7 @@ semanticcms_autogit_taglib = {
             semanticcms_autogit_taglib.GIT_STATUS_POLL_INTERVAL
           );
         },
-        function(textStatus, errorThrown) {
-          // console.log(textStatus);
+        function(errorThrown) {
           // console.log(errorThrown);
           // Call all listeners
           var gitStatusListeners = semanticcms_autogit_taglib.gitStatusListeners;
@@ -182,7 +151,7 @@ semanticcms_autogit_taglib = {
           for (var i=0; i<len; i++) {
             var gitStatusListener = gitStatusListeners[i];
             if (typeof gitStatusListener.onError === 'function') {
-              gitStatusListener.onError.call(gitStatusListener, textStatus, errorThrown);
+              gitStatusListener.onError.call(gitStatusListener, errorThrown);
             }
           }
           setTimeout(
@@ -205,10 +174,20 @@ semanticcms_autogit_taglib = {
 /*
  * Kick-off the Git status polling.
  */
-jQuery(document).ready(function() {
-  // Could optimize this and only begin the polling when first listener is added
-  setTimeout(
-    semanticcms_autogit_taglib.pollGitStatus,
-    semanticcms_autogit_taglib.GIT_STATUS_POLL_INTERVAL
-  );
-});
+(function() {
+  // See https://youmightnotneedjquery.com/#ready
+  function ready(fn) {
+    if (document.readyState !== 'loading') {
+      fn();
+    } else {
+      document.addEventListener('DOMContentLoaded', fn);
+    }
+  }
+  ready(function() {
+    // Could optimize this and only begin the polling when first listener is added
+    setTimeout(
+      semanticcms_autogit_taglib.pollGitStatus,
+      semanticcms_autogit_taglib.GIT_STATUS_POLL_INTERVAL
+    );
+  });
+})();

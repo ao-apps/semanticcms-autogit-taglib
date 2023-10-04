@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 semanticcms-autogit-taglib - SemanticCMS automatic Git in a JSP environment.
-Copyright (C) 2016, 2020, 2022  AO Industries, Inc.
+Copyright (C) 2016, 2020, 2022, 2023  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -29,37 +29,61 @@ This is to be called by the JavaScript function getGitStatus.
 Request parameters:
   None
 -->
-<result
+<jsp:root
+  xmlns:ao="https://oss.aoapps.com/taglib/"
   xmlns:autogit="https://semanticcms.com/autogit/taglib/"
   xmlns:c="http://java.sun.com/jsp/jstl/core"
-  xmlns:fn="http://java.sun.com/jsp/jstl/functions"
   xmlns:jsp="http://java.sun.com/JSP/Page"
+  version="2.1"
 >
   <jsp:directive.page language="java" pageEncoding="UTF-8" />
   <jsp:directive.page session="false" />
-  <jsp:directive.page contentType="application/xml" />
+  <jsp:directive.page contentType="application/json" />
 
-  <states>
-    <c:forEach var="state" items="${autogit:getStates()}">
-      <state name="${fn:escapeXml(state.name())}" toString="${fn:escapeXml(state.toString())}" cssClass="${fn:escapeXml(state.cssClass)}" />
-    </c:forEach>
-  </states>
-  <changes>
-    <c:forEach var="change" items="${autogit:getChanges()}">
-      <change name="${fn:escapeXml(change.name())}" cssClass="${fn:escapeXml(change.cssClass)}" />
-    </c:forEach>
-  </changes>
-  <meanings>
-    <c:forEach var="meaning" items="${autogit:getMeanings()}">
-      <meaning name="${fn:escapeXml(meaning.name())}" toString="${fn:escapeXml(meaning.toString())}" state="${fn:escapeXml(meaning.state.name())}" change="${fn:escapeXml(meaning.change.name())}" />
-    </c:forEach>
-  </meanings>
-  <c:set var="gitStatus" value="${autogit:getGitStatus()}" />
-  <gitStatus statusTime="${fn:escapeXml(gitStatus.statusTime)}" state="${fn:escapeXml(gitStatus.state.name())}">
-    <uncommittedChanges>
-      <c:forEach var="uncommittedChange" items="${gitStatus.uncommittedChanges}">
-        <uncommittedChange x="${fn:escapeXml(uncommittedChange.x)}" y="${fn:escapeXml(uncommittedChange.y)}" meaning="${fn:escapeXml(uncommittedChange.meaning.name())}" module="${fn:escapeXml(uncommittedChange.module)}" from="${fn:escapeXml(uncommittedChange.from)}" to="${fn:escapeXml(uncommittedChange.to)}" />
+  {
+    "states": {
+      <c:forEach var="state" items="${autogit:getStates()}" varStatus="loopStatus">
+        <ao:out value="${state.name()}" />: {
+          "name": <ao:out value="${state.name()}" />,
+          "toStringValue": <ao:out value="${state.toString()}" />,
+          "cssClass": <ao:out value="${state.cssClass}" />
+        }<c:if test="${!loopStatus.last}">,</c:if>
       </c:forEach>
-    </uncommittedChanges>
-  </gitStatus>
-</result>
+    },
+    "changes": {
+      <c:forEach var="change" items="${autogit:getChanges()}" varStatus="loopStatus">
+        <ao:out value="${change.name()}" />: {
+          "name": <ao:out value="${change.name()}" />,
+          "cssClass": <ao:out value="${change.cssClass}" />
+        }<c:if test="${!loopStatus.last}">,</c:if>
+      </c:forEach>
+    },
+    "meanings": {
+      <c:forEach var="meaning" items="${autogit:getMeanings()}" varStatus="loopStatus">
+        <ao:out value="${meaning.name()}" />: {
+          "name": <ao:out value="${meaning.name()}" />,
+          "toStringValue": <ao:out value="${meaning.toString()}" />,
+          "state": <ao:out value="${meaning.state.name()}" />,
+          "change": <ao:out value="${meaning.change.name()}" />
+        }<c:if test="${!loopStatus.last}">,</c:if>
+      </c:forEach>
+    },
+    <c:set var="gitStatus" value="${autogit:getGitStatus()}" />
+    "gitStatus": {
+      "statusTime": <ao:out value="${gitStatus.statusTime}" />,
+      "state": <ao:out value="${gitStatus.state.name()}" />,
+      "uncommittedChanges": [
+        <c:forEach var="uncommittedChange" items="${gitStatus.uncommittedChanges}" varStatus="loopStatus">
+          {
+            "x": <ao:out value="${uncommittedChange.x}" />,
+            "y": <ao:out value="${uncommittedChange.y}" />,
+            "meaning": <ao:out value="${uncommittedChange.meaning.name()}" />,
+            "module": <ao:out value="${uncommittedChange.module}" />,
+            "from": <ao:out value="${uncommittedChange.from}" />,
+            "to": <ao:out value="${uncommittedChange.to}" />
+          }<c:if test="${!loopStatus.last}">,</c:if>
+        </c:forEach>
+      ]
+    }
+  }
+</jsp:root>

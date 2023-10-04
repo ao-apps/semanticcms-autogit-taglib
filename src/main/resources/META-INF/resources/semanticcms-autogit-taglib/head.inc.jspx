@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 semanticcms-autogit-taglib - SemanticCMS automatic Git in a JSP environment.
-Copyright (C) 2016, 2020, 2021, 2022  AO Industries, Inc.
+Copyright (C) 2016, 2020, 2021, 2022, 2023  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -31,9 +31,11 @@ along with semanticcms-autogit-taglib.  If not, see <https://www.gnu.org/license
   <jsp:directive.page language="java" pageEncoding="UTF-8" />
   <jsp:directive.page session="false" />
   <c:if test="${!core:isExporting()}">
-    <ao:script src="/semanticcms-autogit-taglib/semanticcms-autogit-taglib.js" />
-    <ao:script>
-      semanticcms_autogit_taglib.getGitStatusUrl = <ao:out value="${ao:encodeURL(pageContext.request.contextPath.concat('/semanticcms-autogit-taglib/ajax/get-git-status.jspx'))}" />;
+    <!-- TODO: <wr:script /> -->
+    <ao:script src="/semanticcms-autogit-taglib/semanticcms-autogit-taglib.js" defer="true">
+      <ao:onload>
+        semanticcms_autogit_taglib.getGitStatusUrl = <ao:out value="${ao:encodeURL(pageContext.request.contextPath.concat('/semanticcms-autogit-taglib/ajax/get-git-status.jspx'))}" />;
+      </ao:onload>
     </ao:script>
   </c:if>
 </jsp:root>
