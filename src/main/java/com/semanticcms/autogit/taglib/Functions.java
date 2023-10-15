@@ -1,6 +1,6 @@
 /*
  * semanticcms-autogit-taglib - SemanticCMS automatic Git in a JSP environment.
- * Copyright (C) 2016, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2016, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -28,10 +28,12 @@ import static com.aoapps.servlet.filter.FunctionContext.getServletContext;
 
 import com.semanticcms.autogit.model.GitStatus;
 import com.semanticcms.autogit.servlet.AutoGit;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
 /**
  * Tag library function implementations.
  */
+@SuppressFBWarnings("PI_DO_NOT_REUSE_PUBLIC_IDENTIFIERS_CLASS_NAMES")
 public final class Functions {
 
   /** Make no instances. */

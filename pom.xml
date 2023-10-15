@@ -164,6 +164,11 @@ along with semanticcms-autogit-taglib.  If not, see <https://www.gnu.org/license
                       <outputDirectory>${project.build.directory}/offlineLinks/com.semanticcms/semanticcms-core-renderer-html</outputDirectory>
                     </artifactItem>
                     <!-- JSP Only: <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-taglib</artifactId><classifier>javadoc</classifier> -->
+                    <artifactItem>
+                      <groupId>com.github.spotbugs</groupId><artifactId>spotbugs-annotations</artifactId><classifier>javadoc</classifier>
+                      <includes>element-list, package-list</includes>
+                      <outputDirectory>${project.build.directory}/offlineLinks/com.github.spotbugs/spotbugs-annotations</outputDirectory>
+                    </artifactItem>
                     <!-- JSP Only: <groupId>org.apache.taglibs</groupId><artifactId>taglibs-standard-spec</artifactId><classifier>javadoc</classifier> -->
                   </artifactItems>
                 </configuration>
@@ -194,6 +199,10 @@ along with semanticcms-autogit-taglib.  If not, see <https://www.gnu.org/license
                   <location>${project.build.directory}/offlineLinks/com.semanticcms/semanticcms-core-renderer-html</location>
                 </offlineLink>
                 <!-- JSP Only: <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-taglib</artifactId><classifier>javadoc</classifier> -->
+                <offlineLink>
+                  <url>https://javadoc.io/doc/com.github.spotbugs/spotbugs-annotations/${com.github.spotbugs:spotbugs-annotations:jar.version}/</url>
+                  <location>${project.build.directory}/offlineLinks/com.github.spotbugs/spotbugs-annotations</location>
+                </offlineLink>
                 <!-- JSP Only: <groupId>org.apache.taglibs</groupId><artifactId>taglibs-standard-spec</artifactId><classifier>javadoc</classifier> -->
               </offlineLinks>
             </configuration>
@@ -271,6 +280,9 @@ along with semanticcms-autogit-taglib.  If not, see <https://www.gnu.org/license
       </dependency>
       <dependency>
         <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-taglib</artifactId><version>2.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+      </dependency>
+      <dependency>
+        <groupId>com.github.spotbugs</groupId><artifactId>spotbugs-annotations</artifactId><version>4.8.0</version>
       </dependency>
       <!-- javaee-web-api-bom: <groupId>org.apache.taglibs</groupId><artifactId>taglibs-standard-spec</artifactId> -->
       <!-- Transitive -->
@@ -399,6 +411,10 @@ along with semanticcms-autogit-taglib.  If not, see <https://www.gnu.org/license
     </dependency>
     <dependency>
       <groupId>org.apache.taglibs</groupId><artifactId>taglibs-standard-spec</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.github.spotbugs</groupId><artifactId>spotbugs-annotations</artifactId>
+      <optional>true</optional>
     </dependency>
     <!-- Runtime Direct -->
     <dependency>
