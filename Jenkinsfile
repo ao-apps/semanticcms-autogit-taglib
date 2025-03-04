@@ -35,7 +35,6 @@ def upstreamProjects = [
   'servlet', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-autogit-servlet</artifactId>
   '../core/renderer-html', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-renderer-html</artifactId>
   '../core/taglib', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-taglib</artifactId>
-  // No Jenkins: <groupId>com.github.spotbugs</groupId><artifactId>spotbugs-annotations</artifactId>
   // No Jenkins: <groupId>org.apache.taglibs</groupId><artifactId>taglibs-standard-spec</artifactId>
 
   // Runtime Direct
