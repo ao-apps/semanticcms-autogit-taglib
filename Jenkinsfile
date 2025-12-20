@@ -28,8 +28,8 @@ def upstreamProjects = [
   '../parent', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-parent</artifactId>
 
   // Direct
-  '../../oss/servlet-filter-javaee', // <groupId>com.aoapps</groupId><artifactId>ao-servlet-filter</artifactId>
-  '../../oss/taglib-javaee', // <groupId>com.aoapps</groupId><artifactId>ao-taglib</artifactId>
+  '../../oss/servlet-filter', // <groupId>com.aoapps</groupId><artifactId>ao-servlet-filter</artifactId>
+  '../../oss/taglib', // <groupId>com.aoapps</groupId><artifactId>ao-taglib</artifactId>
   // No Jenkins: <groupId>javax.servlet</groupId><artifactId>javax.servlet-api</artifactId>
   'model', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-autogit-model</artifactId>
   'servlet', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-autogit-servlet</artifactId>
