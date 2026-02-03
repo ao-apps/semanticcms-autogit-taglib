@@ -29,12 +29,12 @@ along with semanticcms-autogit-taglib.  If not, see <https://www.gnu.org/license
     <relativePath>../../../parent/pom.xml</relativePath>
   </parent>
 
-  <groupId>com.semanticcms</groupId><artifactId>semanticcms-autogit-taglib-book</artifactId><version>1.22.0</version>
+  <groupId>com.semanticcms</groupId><artifactId>semanticcms-autogit-taglib-book</artifactId><version>1.22.0-POST-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <properties>
     <!-- Must be set to ${git.commit.time} for snapshots or ISO 8601 timestamp for releases. -->
-    <project.build.outputTimestamp>2026-02-03T07:08:20Z</project.build.outputTimestamp>
+    <project.build.outputTimestamp>${git.commit.time}</project.build.outputTimestamp>
     <module.name>com.semanticcms.autogit.taglib.book</module.name>
     <subproject.subpath>book/</subproject.subpath>
     <!-- These values are copied from the project being documented -->
@@ -83,7 +83,7 @@ along with semanticcms-autogit-taglib.  If not, see <https://www.gnu.org/license
     <connection>scm:git:git://github.com/ao-apps/semanticcms-autogit-taglib.git</connection>
     <developerConnection>scm:git:git@github.com:ao-apps/semanticcms-autogit-taglib.git</developerConnection>
     <url>https://github.com/ao-apps/semanticcms-autogit-taglib</url>
-    <tag>semanticcms-autogit-taglib-book-1.22.0</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <issueManagement>
