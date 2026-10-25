@@ -21,8 +21,6 @@
  * along with semanticcms-autogit-taglib.  If not, see <https://www.gnu.org/licenses/>.
  */
 module com.semanticcms.autogit.taglib {
-  exports com.semanticcms.autogit.taglib;
-  exports com.semanticcms.autogit.taglib.ajax;
   // Direct
   requires com.aoapps.servlet.filter; // <groupId>com.aoapps</groupId><artifactId>ao-servlet-filter</artifactId>
   requires com.aoapps.taglib; // <groupId>com.aoapps</groupId><artifactId>ao-taglib</artifactId>
@@ -32,4 +30,7 @@ module com.semanticcms.autogit.taglib {
   requires com.semanticcms.autogit.servlet; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-autogit-servlet</artifactId>
   requires com.semanticcms.core.servlet; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-servlet</artifactId>
   requires com.semanticcms.core.taglib; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-taglib</artifactId>
+
+  exports com.semanticcms.autogit.taglib;
+  exports com.semanticcms.autogit.taglib.ajax;
 }
